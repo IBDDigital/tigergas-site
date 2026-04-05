@@ -262,16 +262,20 @@
       box-shadow: 0 2px 12px rgba(0,0,0,.08);
       transition: transform .2s, box-shadow .2s;
       text-align: center;
-      padding: 36px 24px;
-      border-top: 4px solid var(--orange);
+      padding: 0;
+      border-top: none;
     }
     .service-card:hover {
       transform: translateY(-6px);
       box-shadow: 0 8px 24px rgba(0,0,0,.12);
     }
-    .service-card .icon {
-      font-size: 2.5rem;
-      margin-bottom: 16px;
+    .service-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .service-card .card-body {
+      padding: 24px;
     }
     .service-card h3 {
       font-size: 1.1rem;
@@ -283,6 +287,20 @@
       color: var(--text-light);
       line-height: 1.6;
     }
+    .service-card .find-out {
+      display: inline-block;
+      margin-top: 12px;
+      background: var(--orange);
+      color: #fff;
+      padding: 8px 20px;
+      border-radius: var(--radius);
+      font-size: .8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      transition: background .2s;
+    }
+    .service-card .find-out:hover { background: var(--orange-hover); text-decoration: none; }
 
     /* CTA BANNER */
     .cta-banner {
@@ -501,39 +519,52 @@
     <p class="section-subtitle">From new boiler installations to emergency plumbing, we provide a full range of gas, heating and plumbing services.</p>
     <div class="services-grid">
       <div class="service-card">
-        <div class="icon">&#128293;</div>
-        <h3>New Boiler Packages</h3>
-        <p>Complete boiler installation packages from leading UK manufacturers with full warranties included.</p>
+        <img src="images/service-boiler-new.png" alt="New boiler installation">
+        <div class="card-body">
+          <h3>New Boiler Packages</h3>
+          <p>Complete boiler installation packages from leading UK manufacturers with full warranties included.</p>
+          <a href="#contact" class="find-out">Find Out More</a>
+        </div>
       </div>
       <div class="service-card">
-        <div class="icon">&#128736;</div>
-        <h3>Boiler Service</h3>
-        <p>Annual boiler servicing to keep your heating running efficiently and maintain your warranty.</p>
+        <img src="images/service-boiler-service.png" alt="Boiler servicing">
+        <div class="card-body">
+          <h3>Boiler Service</h3>
+          <p>Annual boiler servicing to keep your heating running efficiently and maintain your warranty.</p>
+          <a href="#contact" class="find-out">Find Out More</a>
+        </div>
       </div>
       <div class="service-card">
-        <div class="icon">&#9888;</div>
-        <h3>Boiler Repair</h3>
-        <p>Fast, reliable boiler repairs to get your heating and hot water back up and running.</p>
+        <img src="images/service-boiler-repair.png" alt="Boiler repair">
+        <div class="card-body">
+          <h3>Boiler Repair</h3>
+          <p>Fast, reliable boiler repairs to get your heating and hot water back up and running.</p>
+          <a href="#contact" class="find-out">Find Out More</a>
+        </div>
       </div>
       <div class="service-card">
-        <div class="icon">&#127859;</div>
-        <h3>Cookers &amp; Hobs</h3>
-        <p>Safe installation, servicing and repair of gas cookers, hobs and range cookers.</p>
+        <img src="images/service-cookers.png" alt="Gas cookers and hobs">
+        <div class="card-body">
+          <h3>Cookers &amp; Hobs</h3>
+          <p>Safe installation, servicing and repair of gas cookers, hobs and range cookers.</p>
+          <a href="#contact" class="find-out">Find Out More</a>
+        </div>
       </div>
       <div class="service-card">
-        <div class="icon">&#9989;</div>
-        <h3>Gas Safety Checks</h3>
-        <p>Landlord gas safety certificates and domestic gas safety inspections by registered engineers.</p>
+        <img src="images/service-gas-safety.jpg" alt="Gas safety certificate">
+        <div class="card-body">
+          <h3>Gas Safety Checks</h3>
+          <p>Landlord gas safety certificates and domestic gas safety inspections by registered engineers.</p>
+          <a href="#contact" class="find-out">Find Out More</a>
+        </div>
       </div>
       <div class="service-card">
-        <div class="icon">&#127811;</div>
-        <h3>Air Source Heat Pumps</h3>
-        <p>Energy-efficient air source heat pump installations for greener, more sustainable heating.</p>
-      </div>
-      <div class="service-card">
-        <div class="icon">&#128167;</div>
-        <h3>Plumbing Services</h3>
-        <p>General plumbing repairs, installations and maintenance for your home or business.</p>
+        <img src="images/service-plumbing.jpg" alt="Plumbing services">
+        <div class="card-body">
+          <h3>Plumbing Services</h3>
+          <p>General plumbing repairs, installations and maintenance for your home or business.</p>
+          <a href="#contact" class="find-out">Find Out More</a>
+        </div>
       </div>
     </div>
   </div>
