@@ -15,7 +15,8 @@
 body {
   font-family: 'Source Sans 3', -apple-system, sans-serif;
   color: var(--text);
-  line-height: 1.6;
+  font-size: 18px;
+  line-height: 1.7;
   background: var(--bg);
 }
 
@@ -58,7 +59,7 @@ nav .logo a { display: inline-block; line-height: 0; }
 nav ul { list-style: none; display: flex; gap: 28px; }
 nav ul a {
   color: rgba(255,255,255,.85);
-  font-size: .9rem;
+  font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: .5px;
@@ -119,11 +120,11 @@ nav ul a:hover { color: var(--orange); text-decoration: none; }
 }
 .hero h1 span { color: var(--orange); }
 .hero p {
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   color: rgba(255,255,255,.85);
   max-width: 650px;
   margin: 0 auto 36px;
-  line-height: 1.7;
+  line-height: 1.8;
 }
 .hero .btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 .btn-primary {
@@ -159,7 +160,7 @@ nav ul a:hover { color: var(--orange); text-decoration: none; }
 section { padding: 72px 0; }
 section.alt { background: var(--bg-alt); }
 .section-title {
-  font-size: 2rem;
+  font-size: 2.25rem;
   font-weight: 700;
   text-align: center;
   margin-bottom: 12px;
@@ -173,7 +174,7 @@ section.alt { background: var(--bg-alt); }
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
-  font-size: 1.05rem;
+  font-size: 1.15rem;
 }
 
 /* TRUST BAR */
@@ -213,14 +214,14 @@ section.alt { background: var(--bg-alt); }
   align-items: center;
 }
 .about-grid h3 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   margin-bottom: 16px;
   color: var(--dark);
 }
 .about-grid p {
   color: var(--text-light);
   margin-bottom: 16px;
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.8;
 }
 .about-highlights {
@@ -271,14 +272,14 @@ section.alt { background: var(--bg-alt); }
   padding: 24px;
 }
 .service-card h3 {
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   margin-bottom: 10px;
   color: var(--dark);
 }
 .service-card p {
-  font-size: .9rem;
+  font-size: 1rem;
   color: var(--text-light);
-  line-height: 1.6;
+  line-height: 1.7;
 }
 .service-card .find-out {
   display: inline-block;
@@ -287,7 +288,7 @@ section.alt { background: var(--bg-alt); }
   color: #fff;
   padding: 8px 20px;
   border-radius: var(--radius);
-  font-size: .8rem;
+  font-size: .9rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: .5px;
@@ -303,11 +304,11 @@ section.alt { background: var(--bg-alt); }
   text-align: center;
 }
 .cta-banner h2 {
-  font-size: 2rem;
+  font-size: 2.25rem;
   margin-bottom: 12px;
 }
 .cta-banner p {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   opacity: .9;
   margin-bottom: 28px;
 }
@@ -343,22 +344,22 @@ section.alt { background: var(--bg-alt); }
   margin-bottom: 12px;
 }
 .contact-card h3 {
-  font-size: 1rem;
+  font-size: 1.15rem;
   color: var(--dark);
   margin-bottom: 8px;
 }
 .contact-card p {
   color: var(--text-light);
-  font-size: .95rem;
+  font-size: 1.05rem;
 }
 .contact-card a {
   color: var(--orange);
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 .contact-card a.btn-primary {
   color: #fff;
-  font-size: .85rem;
+  font-size: .95rem;
 }
 
 /* FOOTER */
@@ -379,10 +380,10 @@ footer h4 {
   font-size: 1rem;
   margin-bottom: 16px;
 }
-footer p { font-size: .85rem; line-height: 1.7; }
+footer p { font-size: .95rem; line-height: 1.7; }
 footer ul { list-style: none; }
 footer ul li { margin-bottom: 8px; }
-footer ul a { color: rgba(255,255,255,.7); font-size: .85rem; }
+footer ul a { color: rgba(255,255,255,.7); font-size: .95rem; }
 footer ul a:hover { color: var(--orange); }
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,.1);
