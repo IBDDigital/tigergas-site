@@ -356,6 +356,10 @@ section.alt { background: var(--bg-alt); }
   font-weight: 600;
   font-size: 1.1rem;
 }
+.contact-card a.btn-primary {
+  color: #fff;
+  font-size: .85rem;
+}
 
 /* FOOTER */
 footer {
