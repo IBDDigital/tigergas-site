@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tiger Gas | Gas, Heating &amp; Plumbing | North East</title>
+  <meta name="description" content="Tiger Gas - Professional gas, heating and plumbing services across the North East. Gas Safe registered engineers. 24/7 call-outs available.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #D73D00;
+      --orange-hover: #bf3500;
+      --dark: #1B1B1B;
+      --dark-light: #2a2a2a;
+      --text: #333333;
+      --text-light: #666666;
+      --bg: #ffffff;
+      --bg-alt: #f5f5f5;
+      --radius: 6px;
+    }
+
+    body {
+      font-family: 'Source Sans 3', -apple-system, sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      background: var(--bg);
+    }
+
+    h1, h2, h3 { font-family: 'Playfair Display', serif; }
+    a { color: var(--orange); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* TOP BAR */
+    .topbar {
+      background: var(--orange);
+      color: #fff;
+      text-align: center;
+      padding: 8px 16px;
+      font-size: .85rem;
+      font-weight: 600;
+      letter-spacing: .5px;
+    }
+    .topbar a { color: #fff; text-decoration: underline; }
+
+    /* NAV */
+    nav {
+      background: var(--dark);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,.3);
+    }
+    nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+    nav .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+    nav .logo span { color: var(--orange); }
+    nav ul { list-style: none; display: flex; gap: 28px; }
+    nav ul a {
+      color: rgba(255,255,255,.85);
+      font-size: .9rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      transition: color .2s;
+    }
+    nav ul a:hover { color: var(--orange); text-decoration: none; }
+
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 26px;
+      height: 3px;
+      background: #fff;
+      margin: 5px 0;
+      border-radius: 2px;
+      transition: .3s;
+    }
+
+    /* HERO */
+    .hero {
+      background: var(--dark);
+      color: #fff;
+      padding: 100px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(215,61,0,.15) 0%, rgba(0,0,0,.6) 100%);
+    }
+    .hero .container { position: relative; z-index: 1; }
+    .hero .badge {
+      display: inline-block;
+      background: var(--orange);
+      color: #fff;
+      font-size: .8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding: 6px 20px;
+      border-radius: 30px;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+    .hero h1 span { color: var(--orange); }
+    .hero p {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,.85);
+      max-width: 650px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+    .hero .btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-block;
+      background: var(--orange);
+      color: #fff;
+      padding: 16px 36px;
+      border-radius: var(--radius);
+      font-weight: 700;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      transition: background .2s, transform .2s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary:hover { background: var(--orange-hover); transform: translateY(-2px); text-decoration: none; }
+    .btn-outline {
+      display: inline-block;
+      border: 2px solid #fff;
+      color: #fff;
+      padding: 14px 36px;
+      border-radius: var(--radius);
+      font-weight: 700;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      transition: background .2s, transform .2s;
+    }
+    .btn-outline:hover { background: rgba(255,255,255,.1); transform: translateY(-2px); text-decoration: none; }
+
+    /* SECTIONS */
+    section { padding: 72px 0; }
+    section.alt { background: var(--bg-alt); }
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 12px;
+      color: var(--dark);
+    }
+    .section-title span { color: var(--orange); }
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-light);
+      margin-bottom: 48px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 1.05rem;
+    }
+
+    /* TRUST BAR */
+    .trust-bar {
+      background: var(--dark);
+      padding: 24px 0;
+    }
+    .trust-items {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      text-align: center;
+      color: #fff;
+    }
+    .trust-item .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--orange);
+    }
+    .trust-item .txt {
+      font-size: .8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: rgba(255,255,255,.7);
+      margin-top: 4px;
+    }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .about-grid h3 {
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+      color: var(--dark);
+    }
+    .about-grid p {
+      color: var(--text-light);
+      margin-bottom: 16px;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+    .about-highlights {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .highlight-card {
+      background: var(--bg);
+      border-left: 4px solid var(--orange);
+      padding: 20px;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,.06);
+    }
+    .highlight-card .icon { font-size: 1.5rem; margin-bottom: 8px; }
+    .highlight-card h4 { font-size: .9rem; color: var(--dark); margin-bottom: 4px; }
+    .highlight-card p { font-size: .8rem; color: var(--text-light); margin: 0; }
+
+    /* SERVICES */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .service-card {
+      background: var(--bg);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,.08);
+      transition: transform .2s, box-shadow .2s;
+      text-align: center;
+      padding: 36px 24px;
+      border-top: 4px solid var(--orange);
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 24px rgba(0,0,0,.12);
+    }
+    .service-card .icon {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+    }
+    .service-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      color: var(--dark);
+    }
+    .service-card p {
+      font-size: .9rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* CTA BANNER */
+    .cta-banner {
+      background: var(--orange);
+      color: #fff;
+      padding: 56px 0;
+      text-align: center;
+    }
+    .cta-banner h2 {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+    .cta-banner p {
+      font-size: 1.1rem;
+      opacity: .9;
+      margin-bottom: 28px;
+    }
+    .cta-banner .btn-dark {
+      display: inline-block;
+      background: var(--dark);
+      color: #fff;
+      padding: 16px 40px;
+      border-radius: var(--radius);
+      font-weight: 700;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      transition: background .2s, transform .2s;
+    }
+    .cta-banner .btn-dark:hover { background: #000; transform: translateY(-2px); text-decoration: none; }
+
+    /* CONTACT */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 32px;
+      text-align: center;
+    }
+    .contact-card {
+      padding: 32px 24px;
+      background: var(--bg);
+      border-radius: var(--radius);
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+    }
+    .contact-card .icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+    .contact-card h3 {
+      font-size: 1rem;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+    .contact-card p {
+      color: var(--text-light);
+      font-size: .95rem;
+    }
+    .contact-card a {
+      color: var(--orange);
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,.7);
+      padding: 40px 0 24px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 32px;
+    }
+    footer h4 {
+      color: #fff;
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      margin-bottom: 16px;
+    }
+    footer p { font-size: .85rem; line-height: 1.7; }
+    footer ul { list-style: none; }
+    footer ul li { margin-bottom: 8px; }
+    footer ul a { color: rgba(255,255,255,.7); font-size: .85rem; }
+    footer ul a:hover { color: var(--orange); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.1);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      font-size: .8rem;
+    }
+    .gas-safe {
+      display: inline-block;
+      background: #fff;
+      color: var(--dark);
+      font-weight: 700;
+      font-size: .75rem;
+      padding: 6px 14px;
+      border-radius: 4px;
+      margin-top: 12px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hamburger { display: block; }
+      nav ul {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        background: var(--dark);
+        flex-direction: column;
+        padding: 16px 24px;
+        gap: 16px;
+        box-shadow: 0 4px 12px rgba(0,0,0,.3);
+      }
+      nav ul.open { display: flex; }
+      .hero h1 { font-size: 2rem; }
+      .hero { padding: 60px 0; }
+      .about-grid { grid-template-columns: 1fr; gap: 32px; }
+      .about-highlights { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+      .footer-bottom { flex-direction: column; gap: 8px; }
+      .trust-items { gap: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  24/7 CALL-OUTS AVAILABLE &mdash; <a href="tel:07999943640">Call 07999 943 640</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="container">
+    <div class="logo">TIGER <span>GAS</span></div>
+    <button class="hamburger" onclick="document.querySelector('nav ul').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="badge">Gas Safe Registered</div>
+    <h1>The North East's Favourite <span>Gas Experts</span></h1>
+    <p>Trust in our professional, qualified engineers for whatever your ask may be. We are experts in gas, heating and plumbing, accredited with the Gas Safe register.</p>
+    <div class="btns">
+      <a href="tel:07999943640" class="btn-primary">Call Tiger Gas</a>
+      <a href="#services" class="btn-outline">Our Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-items">
+      <div class="trust-item">
+        <div class="num">Gas Safe</div>
+        <div class="txt">Registered</div>
+      </div>
+      <div class="trust-item">
+        <div class="num">24/7</div>
+        <div class="txt">Call-Outs</div>
+      </div>
+      <div class="trust-item">
+        <div class="num">North East</div>
+        <div class="txt">Coverage</div>
+      </div>
+      <div class="trust-item">
+        <div class="num">Qualified</div>
+        <div class="txt">Engineers</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <h2 class="section-title">About <span>Tiger Gas</span></h2>
+    <p class="section-subtitle">We work with the leading boiler manufacturers in the UK and receive direct, exclusive training from them.</p>
+    <div class="about-grid">
+      <div>
+        <h3>Professional, Qualified Engineers</h3>
+        <p>Tiger Gas provides expert gas, heating and plumbing services across the North East. Our engineers are fully qualified, Gas Safe registered, and trained directly by leading boiler manufacturers.</p>
+        <p>We can assure you that you will not receive better quality for the service you require elsewhere. From boiler installations to emergency repairs, we have you covered.</p>
+        <div class="gas-safe">Gas Safe Registered</div>
+      </div>
+      <div class="about-highlights">
+        <div class="highlight-card">
+          <div class="icon">&#128293;</div>
+          <h4>Gas Safe</h4>
+          <p>Fully registered and accredited</p>
+        </div>
+        <div class="highlight-card">
+          <div class="icon">&#9201;</div>
+          <h4>24/7 Available</h4>
+          <p>Emergency call-outs any time</p>
+        </div>
+        <div class="highlight-card">
+          <div class="icon">&#127942;</div>
+          <h4>Factory Trained</h4>
+          <p>Direct manufacturer training</p>
+        </div>
+        <div class="highlight-card">
+          <div class="icon">&#128205;</div>
+          <h4>North East</h4>
+          <p>Full regional coverage</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="alt">
+  <div class="container">
+    <h2 class="section-title">Our <span>Services</span></h2>
+    <p class="section-subtitle">From new boiler installations to emergency plumbing, we provide a full range of gas, heating and plumbing services.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="icon">&#128293;</div>
+        <h3>New Boiler Packages</h3>
+        <p>Complete boiler installation packages from leading UK manufacturers with full warranties included.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">&#128736;</div>
+        <h3>Boiler Service</h3>
+        <p>Annual boiler servicing to keep your heating running efficiently and maintain your warranty.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">&#9888;</div>
+        <h3>Boiler Repair</h3>
+        <p>Fast, reliable boiler repairs to get your heating and hot water back up and running.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">&#127859;</div>
+        <h3>Cookers &amp; Hobs</h3>
+        <p>Safe installation, servicing and repair of gas cookers, hobs and range cookers.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">&#9989;</div>
+        <h3>Gas Safety Checks</h3>
+        <p>Landlord gas safety certificates and domestic gas safety inspections by registered engineers.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">&#127811;</div>
+        <h3>Air Source Heat Pumps</h3>
+        <p>Energy-efficient air source heat pump installations for greener, more sustainable heating.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">&#128167;</div>
+        <h3>Plumbing Services</h3>
+        <p>General plumbing repairs, installations and maintenance for your home or business.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <div class="container">
+    <h2>Need a Gas Engineer?</h2>
+    <p>Call us today for a free, no-obligation quote. 24/7 emergency call-outs available.</p>
+    <a href="tel:07999943640" class="btn-dark">Call 07999 943 640</a>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title">Get in <span>Touch</span></h2>
+    <p class="section-subtitle">Ready to book or have a question? Get in touch with our team.</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="icon">&#128222;</div>
+        <h3>Call Us</h3>
+        <p><a href="tel:07999943640">07999 943 640</a></p>
+      </div>
+      <div class="contact-card">
+        <div class="icon">&#128222;</div>
+        <h3>Alternative Number</h3>
+        <p><a href="tel:+447415776665">07415 776 665</a></p>
+      </div>
+      <div class="contact-card">
+        <div class="icon">&#128205;</div>
+        <h3>Coverage Area</h3>
+        <p>Covering the North East</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Tiger Gas</h4>
+        <p>Professional gas, heating and plumbing services across the North East. Gas Safe registered engineers providing quality workmanship you can trust. 24/7 emergency call-outs available.</p>
+        <div class="gas-safe">Gas Safe Registered</div>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">New Boiler Packages</a></li>
+          <li><a href="#services">Boiler Service</a></li>
+          <li><a href="#services">Boiler Repair</a></li>
+          <li><a href="#services">Gas Safety Checks</a></li>
+          <li><a href="#services">Plumbing Services</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Tiger Gas. All rights reserved.</span>
+      <span>Gas | Heating | Plumbing</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
