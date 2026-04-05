@@ -9,6 +9,149 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    .gs-hero {
+      background: url('images/gas-flame.webp') center/cover no-repeat;
+      position: relative;
+      padding: 100px 0;
+      text-align: center;
+      color: #fff;
+    }
+    .gs-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,.6);
+    }
+    .gs-hero .container { position: relative; z-index: 1; }
+    .gs-hero .label {
+      text-transform: uppercase;
+      font-size: .8rem;
+      letter-spacing: 2px;
+      color: rgba(255,255,255,.7);
+      margin-bottom: 12px;
+    }
+    .gs-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+    .gs-hero h1 span { color: var(--orange); }
+
+    .gs-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .gs-intro img {
+      width: 100%;
+      border-radius: 6px;
+      box-shadow: 0 4px 16px rgba(0,0,0,.12);
+    }
+    .gs-intro ul {
+      list-style: none;
+      padding: 0;
+    }
+    .gs-intro ul li {
+      padding: 8px 0;
+      font-size: 1rem;
+      color: #333;
+      border-bottom: 1px solid #eee;
+    }
+    .gs-intro ul li::before {
+      content: '\2022';
+      color: var(--orange);
+      font-weight: 700;
+      margin-right: 10px;
+    }
+
+    .gs-cp12 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .gs-cp12 img {
+      width: 100%;
+      max-width: 350px;
+      margin: 0 auto;
+      display: block;
+    }
+
+    .pricing-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .pricing-card {
+      background: #fff;
+      border-radius: 6px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.08);
+      text-align: center;
+      padding: 36px 24px;
+      border-top: 4px solid var(--orange);
+      transition: transform .2s;
+    }
+    .pricing-card:hover { transform: translateY(-4px); }
+    .pricing-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--orange);
+      margin-bottom: 12px;
+    }
+    .pricing-card .price {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 16px;
+    }
+    .pricing-card ul {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+    }
+    .pricing-card ul li {
+      padding: 6px 0;
+      font-size: .9rem;
+      color: #666;
+    }
+    .pricing-card ul li::before {
+      content: '\2022';
+      color: var(--orange);
+      font-weight: 700;
+      margin-right: 8px;
+    }
+    .pricing-card .btn-primary {
+      margin-top: 20px;
+      padding: 10px 24px;
+      font-size: .85rem;
+    }
+
+    .failure-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .failure-card {
+      background: #fff;
+      border-radius: 6px;
+      padding: 28px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.06);
+    }
+    .failure-card.danger { border-left: 4px solid #dc2626; }
+    .failure-card.risk { border-left: 4px solid #f59e0b; }
+    .failure-card.ncs { border-left: 4px solid #3b82f6; }
+    .failure-card h4 { font-size: 1rem; margin-bottom: 8px; color: var(--dark); }
+    .failure-card p { font-size: .9rem; color: #666; line-height: 1.6; }
+
+    @media (max-width: 768px) {
+      .gs-intro, .gs-cp12 { grid-template-columns: 1fr; }
+      .pricing-cards, .failure-grid { grid-template-columns: 1fr; }
+      .gs-hero h1 { font-size: 1.75rem; }
+    }
+  </style>
 </head>
 <body>
 
@@ -33,86 +176,109 @@
   </div>
 </nav>
 
-<!-- PAGE HERO -->
-<section class="page-hero">
+<!-- HERO WITH FLAME BACKGROUND -->
+<section class="gs-hero">
   <div class="container">
-    <h1>Gas Safety <span>Checks</span></h1>
-    <p>Landlord gas safety certificates and domestic gas safety inspections by Gas Safe registered engineers.</p>
+    <p class="label">Landlord Gas Safety Check (CP12)</p>
+    <h1>Gas Safety <span>Check</span></h1>
   </div>
 </section>
 
-<!-- FEATURES -->
+<!-- INTRO WITH IMAGE -->
 <section>
   <div class="container">
-    <h2 class="section-title">Why Choose <span>Tiger Gas</span></h2>
-    <div class="feature-grid">
-      <div class="feature-card">
-        <div class="feature-icon">&#128205;</div>
-        <h3>Local Engineer</h3>
-        <p>Based in the North East with fast response times.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">&#128176;</div>
-        <h3>Competitive Pricing</h3>
-        <p>Low prices on all gas safety inspections and certificates.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">&#128293;</div>
-        <h3>Gas Safe Qualified</h3>
-        <p>All engineers are fully qualified and Gas Safe registered.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">&#128197;</div>
-        <h3>Annual Reminders</h3>
-        <p>We will remind you when your next gas safety check is due.</p>
+    <div class="gs-intro">
+      <img src="images/gas-landlord.jpg" alt="Gas safety inspection">
+      <div>
+        <h2 class="section-title" style="text-align:left;">Gas Safety Check</h2>
+        <p style="color:#666; margin-bottom: 20px;">Gas safety checks and certification for landlords</p>
+        <ul>
+          <li>Local Engineer</li>
+          <li>Low Prices</li>
+          <li>Uphold Legal Requirement</li>
+          <li>Service and Certify Your Appliances</li>
+          <li>Gas Safe Qualified</li>
+          <li>Annual Safety Check Reminder (if opted in)</li>
+        </ul>
+        <a href="contact.html" class="btn-primary" style="margin-top: 24px; display: inline-block;">Contact Tiger Gas</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PRICING -->
+<!-- CP12 SECTION WITH CERTIFICATE IMAGE -->
 <section class="alt">
   <div class="container">
-    <h2 class="section-title">Gas Safety <span>Prices</span></h2>
-    <table class="pricing-table">
-      <thead>
-        <tr>
-          <th>Service</th>
-          <th>Price</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Gas Safety Check<span class="note">Up to 2 appliances. Gas fires +&pound;15</span></td>
-          <td class="price">&pound;60</td>
-        </tr>
-        <tr>
-          <td>Gas Safety Check + Boiler Service</td>
-          <td class="price">&pound;70</td>
-        </tr>
-        <tr>
-          <td>Complete Package</td>
-          <td class="price">&pound;100</td>
-        </tr>
-      </tbody>
-    </table>
+    <h2 class="section-title">Gas Safety <span>Certificate</span></h2>
+    <div class="gs-cp12" style="margin-top: 36px;">
+      <div>
+        <h3 style="font-family:'Playfair Display',serif; font-size:1.3rem; margin-bottom:16px; color:var(--dark);">CP12</h3>
+        <p style="color:#666; line-height:1.8; margin-bottom:16px;">A landlord is responsible for maintaining the safety of gas appliances in a residential or commercial property.</p>
+        <p style="color:#666; line-height:1.8; margin-bottom:16px;">A CP12 certificate must be earned. This is the legal requirement for every landlord. All services must be carried out for a Gas Safe engineer. Luckily everyone at Tiger Gas is registered under Gas Safe and we are more than qualified to check the safety of gas appliances in your property.</p>
+        <p style="color:#666; line-height:1.8; margin-bottom:16px;">An annual gas safety check must be carried out by a Gas Safe engineer. At Tiger Gas we can notify you on every 12 months for all your properties and appliances.</p>
+        <p style="color:#666; line-height:1.8;">A copy of the safety check must be kept for 2 years, then a copy must be sent to the existing tenant within 28 days of the dated certification, or a copy needs to be sent to the new tenant before they move in.</p>
+      </div>
+      <img src="images/gas-certificate.webp" alt="Gas safety certificate CP12">
+    </div>
   </div>
 </section>
 
-<!-- CP12 INFO -->
+<!-- PRICING CARDS -->
 <section>
   <div class="container">
-    <div class="content-section">
-      <h2>What is a <span>CP12?</span></h2>
-      <p>A CP12 is a Gas Safety Certificate. It is a legal requirement for landlords to have an annual gas safety check carried out on all gas appliances in a rental property. The CP12 certificate is issued by a Gas Safe registered engineer after a successful inspection.</p>
+    <h2 class="section-title">Prices</h2>
+    <p class="section-subtitle">Competitive pricing for all gas safety services.</p>
+    <div class="pricing-cards">
+      <div class="pricing-card">
+        <h3>Gas Safety Check</h3>
+        <div class="price">&pound;60</div>
+        <ul>
+          <li>Legal Requirement</li>
+          <li>Up to 2 appliances</li>
+          <li>Gas fire &pound;15 extra</li>
+        </ul>
+        <a href="contact.html" class="btn-primary">Book Now</a>
+      </div>
+      <div class="pricing-card">
+        <h3>Boiler Service</h3>
+        <div class="price">&pound;70</div>
+        <ul>
+          <li>Legal Requirement</li>
+          <li>Warranty Requirement</li>
+        </ul>
+        <a href="contact.html" class="btn-primary">Book Now</a>
+      </div>
+      <div class="pricing-card">
+        <h3>Gas Check &amp; Boiler Service</h3>
+        <div class="price">&pound;100</div>
+        <ul>
+          <li>Legal Requirement</li>
+          <li>Recommended</li>
+        </ul>
+        <a href="contact.html" class="btn-primary">Book Now</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <h2>Failure <span>Categories</span></h2>
-      <p>If an appliance fails a gas safety check, it will be classified into one of the following categories:</p>
-      <ul>
-        <li><strong>ID (Immediately Dangerous)</strong> - The appliance poses an immediate risk to life and must be disconnected straight away.</li>
-        <li><strong>AR (At Risk)</strong> - The appliance is not immediately dangerous but could become so. It should be repaired or replaced as soon as possible.</li>
-        <li><strong>NCS (Not Current Standards)</strong> - The appliance does not meet current installation standards but is not necessarily dangerous. It should be monitored and updated when possible.</li>
-      </ul>
+<!-- FAILURE CATEGORIES -->
+<section class="alt">
+  <div class="container">
+    <h2 class="section-title">Failure <span>Categories</span></h2>
+    <p class="section-subtitle">If an appliance fails a gas safety check, it will be classified into one of the following categories.</p>
+    <div class="failure-grid">
+      <div class="failure-card danger">
+        <h4>ID (Immediately Dangerous)</h4>
+        <p>The appliance poses an immediate risk to life and must be disconnected straight away. The gas supply will be cut off.</p>
+      </div>
+      <div class="failure-card risk">
+        <h4>AR (At Risk)</h4>
+        <p>The appliance is not immediately dangerous but could become so. The gas supply is likely to be cut off. Urgent repair or replacement is required.</p>
+      </div>
+      <div class="failure-card ncs">
+        <h4>NCS (Not Current Standards)</h4>
+        <p>The appliance does not meet current installation standards but is not necessarily dangerous. Updates needed to meet modern safety standards.</p>
+      </div>
     </div>
   </div>
 </section>
