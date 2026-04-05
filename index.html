@@ -61,14 +61,10 @@
       justify-content: space-between;
       height: 68px;
     }
-    nav .logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: #fff;
-      letter-spacing: 1px;
+    nav .logo img {
+      height: 40px;
+      width: auto;
     }
-    nav .logo span { color: var(--orange); }
     nav ul { list-style: none; display: flex; gap: 28px; }
     nav ul a {
       color: rgba(255,255,255,.85);
@@ -99,9 +95,9 @@
 
     /* HERO */
     .hero {
-      background: var(--dark);
+      background: url('images/skyline.jpg') center/cover no-repeat;
       color: #fff;
-      padding: 100px 0;
+      padding: 120px 0;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -110,7 +106,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(215,61,0,.15) 0%, rgba(0,0,0,.6) 100%);
+      background: rgba(0,0,0,.65);
     }
     .hero .container { position: relative; z-index: 1; }
     .hero .badge {
@@ -290,7 +286,7 @@
 
     /* CTA BANNER */
     .cta-banner {
-      background: var(--orange);
+      background: linear-gradient(rgba(215,61,0,.9), rgba(215,61,0,.9)), url('images/hero.jpg') center/cover no-repeat;
       color: #fff;
       padding: 56px 0;
       text-align: center;
@@ -429,7 +425,7 @@
 <!-- NAV -->
 <nav>
   <div class="container">
-    <div class="logo">TIGER <span>GAS</span></div>
+    <div class="logo"><img src="images/logo.png" alt="Tiger Gas"></div>
     <button class="hamburger" onclick="document.querySelector('nav ul').classList.toggle('open')" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -491,27 +487,8 @@
         <p>We can assure you that you will not receive better quality for the service you require elsewhere. From boiler installations to emergency repairs, we have you covered.</p>
         <div class="gas-safe">Gas Safe Registered</div>
       </div>
-      <div class="about-highlights">
-        <div class="highlight-card">
-          <div class="icon">&#128293;</div>
-          <h4>Gas Safe</h4>
-          <p>Fully registered and accredited</p>
-        </div>
-        <div class="highlight-card">
-          <div class="icon">&#9201;</div>
-          <h4>24/7 Available</h4>
-          <p>Emergency call-outs any time</p>
-        </div>
-        <div class="highlight-card">
-          <div class="icon">&#127942;</div>
-          <h4>Factory Trained</h4>
-          <p>Direct manufacturer training</p>
-        </div>
-        <div class="highlight-card">
-          <div class="icon">&#128205;</div>
-          <h4>North East</h4>
-          <p>Full regional coverage</p>
-        </div>
+      <div>
+        <img src="images/hero.jpg" alt="Boiler controls" style="width:100%; border-radius: var(--radius); box-shadow: 0 4px 16px rgba(0,0,0,.12);">
       </div>
     </div>
   </div>
