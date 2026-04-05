@@ -221,13 +221,21 @@
   var images = [];
   var currentIndex = 0;
 
-  // SETUP: Replace this URL with your Cloudflare Worker URL
-  var GALLERY_API = 'https://gallery-api.tigergas.co.uk/';
+  // SETUP: Replace with your public R2 bucket URL (custom domain or r2.dev)
+  var BUCKET_URL = 'https://gallery.tigergas.co.uk';
 
-  fetch(GALLERY_API)
-    .then(function(r){ return r.json(); })
-    .then(function(data){
-      images = data;
+  fetch(BUCKET_URL)
+    .then(function(r){ return r.text(); })
+    .then(function(xml){
+      var parser = new DOMParser();
+      var doc = parser.parseFromString(xml, 'application/xml');
+      var keys = doc.querySelectorAll('Contents > Key');
+      keys.forEach(function(el){
+        var key = el.textContent;
+        if(/\.(jpg|jpeg|png|webp|gif)$/i.test(key)){
+          images.push(BUCKET_URL + '/' + key);
+        }
+      });
       if(!images.length){ empty.style.display = 'block'; return; }
       images.forEach(function(src, i){
         var div = document.createElement('div');
