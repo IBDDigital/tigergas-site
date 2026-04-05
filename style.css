@@ -255,6 +255,8 @@ section.alt { background: var(--bg-alt); }
   text-align: center;
   padding: 0;
   border-top: none;
+  display: flex;
+  flex-direction: column;
 }
 .service-card:hover {
   transform: translateY(-6px);
@@ -270,6 +272,12 @@ section.alt { background: var(--bg-alt); }
 }
 .service-card .card-body {
   padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.service-card .card-body p {
+  flex: 1;
 }
 .service-card h3 {
   font-size: 1.25rem;
@@ -407,7 +415,11 @@ footer ul a:hover { color: var(--orange); }
 .page-hero {
   background: var(--dark);
   color: #fff;
-  padding: 56px 0;
+  padding: 60px 0;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   position: relative;
 }
@@ -418,7 +430,7 @@ footer ul a:hover { color: var(--orange); }
 .page-hero h1 span { color: var(--orange); }
 .page-hero p {
   color: rgba(255,255,255,.8);
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   max-width: 650px;
   margin: 16px auto 0;
   line-height: 1.7;
