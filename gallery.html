@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | Tiger Gas</title>
+  <meta name="description" content="Browse our gallery of completed gas, heating and plumbing work across the North East. Tiger Gas - Gas Safe registered engineers.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .gallery-hero {
+      background: url('images/skyline.jpg') center/cover no-repeat;
+      position: relative; padding: 100px 0; text-align: center; color: #fff;
+    }
+    .gallery-hero::before { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,.55); }
+    .gallery-hero .container { position: relative; z-index: 1; }
+    .gallery-hero h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 800; margin-bottom: 16px; }
+    .gallery-hero h1 span { color: var(--orange); }
+    .gallery-hero p { font-size: 1.15rem; color: rgba(255,255,255,.85); max-width: 600px; margin: 0 auto; line-height: 1.7; }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 6px;
+      cursor: pointer;
+      aspect-ratio: 4/3;
+      box-shadow: 0 2px 12px rgba(0,0,0,.08);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .3s ease;
+      display: block;
+    }
+    .gallery-item:hover img { transform: scale(1.05); }
+
+    .gallery-empty {
+      text-align: center;
+      padding: 60px 20px;
+      color: #999;
+      font-size: 1.1rem;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.9);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 85vh;
+      border-radius: 6px;
+      box-shadow: 0 4px 32px rgba(0,0,0,.5);
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 28px;
+      font-size: 2.5rem;
+      color: #fff;
+      cursor: pointer;
+      background: none;
+      border: none;
+      line-height: 1;
+      z-index: 10000;
+    }
+    .lightbox-close:hover { color: var(--orange); }
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2.5rem;
+      color: #fff;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 12px;
+      z-index: 10000;
+    }
+    .lightbox-nav:hover { color: var(--orange); }
+    .lightbox-prev { left: 16px; }
+    .lightbox-next { right: 16px; }
+
+    @media (max-width: 768px) {
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .gallery-hero h1 { font-size: 1.75rem; }
+      .gallery-hero { padding: 60px 0; }
+      .lightbox-nav { font-size: 1.8rem; }
+    }
+    @media (max-width: 480px) {
+      .gallery-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  24/7 CALL-OUTS AVAILABLE | <a href="tel:07999943640">Call 07999 943 640</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="container">
+    <div class="logo"><a href="index.html"><img src="images/logo.png" alt="Tiger Gas"></a></div>
+    <button class="hamburger" onclick="document.querySelector('nav ul').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li class="has-dropdown"><a href="services.html">Services</a>
+        <div class="dropdown">
+          <a href="new-boiler-packages.html">New Boiler Packages</a>
+          <a href="boiler-service.html">Boiler Service</a>
+          <a href="boiler-repair.html">Boiler Repair</a>
+          <a href="gas-safety-checks.html">Gas Safety Checks</a>
+          <a href="cookers-and-hobs.html">Cookers &amp; Hobs</a>
+          <a href="air-source-heat-pumps.html">Air Source Heat Pumps</a>
+        </div>
+      </li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+
+<!-- HERO -->
+<section class="gallery-hero">
+  <div class="container">
+    <h1>Our <span>Gallery</span></h1>
+    <p>Browse photos of our completed work across the North East.</p>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section>
+  <div class="container">
+    <div class="gallery-grid" id="galleryGrid"></div>
+    <div class="gallery-empty" id="galleryEmpty" style="display:none;">No images to display yet.</div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-banner">
+  <div class="container">
+    <h2>Like What You See?</h2>
+    <p>Call us today for a free, no-obligation quote on any of our services.</p>
+    <a href="tel:07999943640" class="btn-dark">Call 07999 943 640</a>
+  </div>
+</div>
+
+</main>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lbClose">&times;</button>
+  <button class="lightbox-nav lightbox-prev" id="lbPrev">&#10094;</button>
+  <button class="lightbox-nav lightbox-next" id="lbNext">&#10095;</button>
+  <img id="lbImg" src="" alt="Gallery image">
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Tiger Gas</h4>
+        <p>Professional gas, heating and plumbing services across the North East. Gas Safe registered engineers providing quality workmanship you can trust.</p>
+        <div class="gas-safe">Gas Safe Registered</div>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="new-boiler-packages.html">New Boiler Packages</a></li>
+          <li><a href="boiler-service.html">Boiler Service</a></li>
+          <li><a href="boiler-repair.html">Boiler Repair</a></li>
+          <li><a href="gas-safety-checks.html">Gas Safety Checks</a></li>
+          <li><a href="cookers-and-hobs.html">Cookers &amp; Hobs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Tiger Gas. All rights reserved.</span>
+      <span>Gas | Heating | Plumbing</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var grid = document.getElementById('galleryGrid');
+  var empty = document.getElementById('galleryEmpty');
+  var images = [];
+  var currentIndex = 0;
+
+  fetch('gallery.json?v=' + Date.now())
+    .then(function(r){ return r.json(); })
+    .then(function(data){
+      images = data;
+      if(!images.length){ empty.style.display = 'block'; return; }
+      images.forEach(function(src, i){
+        var div = document.createElement('div');
+        div.className = 'gallery-item';
+        var img = document.createElement('img');
+        img.src = src;
+        img.alt = 'Tiger Gas work';
+        img.loading = 'lazy';
+        img.onclick = function(){ openLightbox(i); };
+        div.appendChild(img);
+        grid.appendChild(div);
+      });
+    })
+    .catch(function(){ empty.style.display = 'block'; });
+
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lbImg');
+
+  function openLightbox(i){
+    currentIndex = i;
+    lbImg.src = images[i];
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox(){
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.getElementById('lbClose').onclick = closeLightbox;
+  document.getElementById('lbPrev').onclick = function(){
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    lbImg.src = images[currentIndex];
+  };
+  document.getElementById('lbNext').onclick = function(){
+    currentIndex = (currentIndex + 1) % images.length;
+    lbImg.src = images[currentIndex];
+  };
+  lb.onclick = function(e){ if(e.target === lb) closeLightbox(); };
+  document.addEventListener('keydown', function(e){
+    if(!lb.classList.contains('open')) return;
+    if(e.key === 'Escape') closeLightbox();
+    if(e.key === 'ArrowLeft') document.getElementById('lbPrev').click();
+    if(e.key === 'ArrowRight') document.getElementById('lbNext').click();
+  });
+})();
+</script>
+</body>
+</html>
