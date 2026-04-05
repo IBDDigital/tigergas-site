@@ -874,10 +874,7 @@ footer ul a:hover { color: var(--orange); }
   font-size: .95rem;
 }
 .slider-dots {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 28px;
+  display: none;
 }
 .slider-dots .dot {
   width: 10px;
