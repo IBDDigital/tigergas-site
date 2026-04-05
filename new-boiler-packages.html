@@ -11,6 +11,265 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* FEATURE ICONS */
+    .nbp-features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .nbp-feature {
+      text-align: center;
+      padding: 32px 20px;
+      background: #fff;
+      border-radius: 6px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+      border-top: 3px solid var(--orange);
+    }
+    .nbp-feature .icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+    .nbp-feature h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+    .nbp-feature p {
+      font-size: .9rem;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* MOST POPULAR */
+    .popular-heading {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+    .popular-heading .label {
+      display: inline-block;
+      background: var(--orange);
+      color: #fff;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      border-radius: 30px;
+      margin-bottom: 16px;
+    }
+    .popular-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .popular-card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,.1);
+      overflow: hidden;
+      border: 2px solid var(--orange);
+      position: relative;
+      text-align: center;
+      transition: transform .2s;
+    }
+    .popular-card:hover { transform: translateY(-4px); }
+    .popular-card .badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: var(--orange);
+      color: #fff;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+    .popular-card .img-wrap {
+      background: #f8f8f8;
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 200px;
+    }
+    .popular-card .img-wrap img {
+      max-height: 180px;
+      width: auto;
+      max-width: 100%;
+    }
+    .popular-card .info {
+      padding: 24px;
+    }
+    .popular-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+    .popular-card .price {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--orange);
+      margin-bottom: 12px;
+    }
+    .popular-card .details {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 16px;
+      text-align: left;
+    }
+    .popular-card .details li {
+      font-size: .85rem;
+      color: #666;
+      padding: 4px 0;
+    }
+    .popular-card .details li::before {
+      content: '\2713';
+      color: var(--orange);
+      font-weight: 700;
+      margin-right: 8px;
+    }
+
+    /* ALL BOILERS GRID */
+    .boiler-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .boiler-card {
+      background: #fff;
+      border-radius: 6px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+      overflow: hidden;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      transition: transform .2s;
+    }
+    .boiler-card:hover { transform: translateY(-3px); }
+    .boiler-card .img-wrap {
+      background: #f8f8f8;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 160px;
+    }
+    .boiler-card .img-wrap img {
+      max-height: 140px;
+      width: auto;
+      max-width: 100%;
+    }
+    .boiler-card .info {
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .boiler-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--dark);
+      margin-bottom: 4px;
+    }
+    .boiler-card .brand {
+      font-size: .8rem;
+      color: #999;
+      margin-bottom: 12px;
+    }
+    .boiler-card .price {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--orange);
+      margin-top: auto;
+    }
+    .boiler-card .note {
+      display: block;
+      font-size: .75rem;
+      color: var(--orange);
+      font-weight: 600;
+      margin-top: 6px;
+    }
+
+    /* ATAG SECTION */
+    .atag-partner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .atag-partner .img-wrap {
+      background: #f8f8f8;
+      border-radius: 8px;
+      padding: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .atag-partner .img-wrap img {
+      max-height: 250px;
+      width: auto;
+      max-width: 100%;
+    }
+    .atag-partner h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--dark);
+      margin-bottom: 16px;
+    }
+    .atag-partner p {
+      color: #666;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .atag-models {
+      margin-top: 20px;
+    }
+    .atag-model {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .atag-model .name {
+      font-weight: 600;
+      color: var(--dark);
+    }
+    .atag-model .price {
+      font-weight: 700;
+      color: var(--orange);
+      font-size: 1.1rem;
+    }
+
+    /* CALLOUT */
+    .price-note {
+      background: #fff3e6;
+      border-left: 4px solid var(--orange);
+      padding: 20px 24px;
+      border-radius: 0 6px 6px 0;
+      margin-top: 32px;
+      color: #666;
+      font-size: .95rem;
+    }
+    .price-note strong { color: var(--dark); }
+
+    @media (max-width: 768px) {
+      .nbp-features { grid-template-columns: 1fr; }
+      .popular-grid { grid-template-columns: 1fr; }
+      .boiler-grid { grid-template-columns: 1fr 1fr; }
+      .atag-partner { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .boiler-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
@@ -41,135 +300,246 @@
 <section class="page-hero">
   <div class="container">
     <h1>New Boiler <span>Packages</span></h1>
-    <p>Get a new boiler from the North East's favourite gas experts. Our engineers will provide you their expert advice in which boiler will suit your home the best. Contact us to receive a free quote.</p>
+    <p>Get a new boiler from the North East's favourite gas experts. Contact us to receive a free, no-obligation quote.</p>
   </div>
 </section>
 
-<!-- FEATURES -->
+<!-- WHY CHOOSE US -->
 <section>
   <div class="container">
     <h2 class="section-title">Why Choose <span>Tiger Gas</span></h2>
-    <div class="feature-grid">
-      <div class="feature-card">
-        <div class="feature-icon">&#128293;</div>
+    <p class="section-subtitle">Expert advice, competitive pricing and a quality installation every time.</p>
+    <div class="nbp-features">
+      <div class="nbp-feature">
+        <div class="icon">&#128293;</div>
         <h3>Gas Safe Registered</h3>
         <p>All our engineers are Gas Safe registered and fully qualified.</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">&#9201;</div>
-        <h3>24 Hours Install</h3>
-        <p>Most boiler installations completed within 24 hours.</p>
+      <div class="nbp-feature">
+        <div class="icon">&#9201;</div>
+        <h3>Fitted Within 24 Hours</h3>
+        <p>Most boiler installations completed within 24 hours of starting.</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">&#128203;</div>
-        <h3>Warranty (5 to 12 Years)</h3>
-        <p>Manufacturer warranties ranging from 5 to 12 years included.</p>
+      <div class="nbp-feature">
+        <div class="icon">&#128203;</div>
+        <h3>5 to 12 Year Warranty</h3>
+        <p>Manufacturer warranties from 5 to 12 years included as standard.</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">&#128230;</div>
+      <div class="nbp-feature">
+        <div class="icon">&#128230;</div>
         <h3>Supply and Fit Included</h3>
-        <p>Our prices include both the boiler and professional installation.</p>
+        <p>Our prices include the boiler, parts and professional installation.</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">&#127942;</div>
+      <div class="nbp-feature">
+        <div class="icon">&#127942;</div>
         <h3>Manufacturer Registered</h3>
-        <p>We are registered with leading boiler manufacturers.</p>
+        <p>We register your boiler with the manufacturer and provide lifetime documentation.</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">&#127777;</div>
-        <h3>Free Wireless Room Thermostat</h3>
-        <p>Every installation includes a free wireless room thermostat.</p>
+      <div class="nbp-feature">
+        <div class="icon">&#127777;</div>
+        <h3>Free Wireless Thermostat</h3>
+        <p>Every installation includes a complimentary wireless room thermostat.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PRICING -->
+<!-- MOST POPULAR -->
 <section class="alt">
   <div class="container">
-    <h2 class="section-title">Boiler <span>Pricing</span></h2>
+    <div class="popular-heading">
+      <div class="label">Most Popular</div>
+      <h2 class="section-title">Our <span>Recommended</span> Boilers</h2>
+      <p class="section-subtitle">Our engineers' top picks for reliability, efficiency and value.</p>
+    </div>
+    <div class="popular-grid">
+      <div class="popular-card">
+        <div class="badge">Recommended</div>
+        <div class="img-wrap">
+          <img loading="lazy" src="images/boiler-main-eco.png" alt="Main Eco Compact Combi">
+        </div>
+        <div class="info">
+          <h3>Main Eco Compact Combi</h3>
+          <div class="price">From &pound;1,850</div>
+          <ul class="details">
+            <li>Manufactured by BAXI</li>
+            <li>Compact and reliable</li>
+            <li>Supply and fit included</li>
+            <li>Free wireless thermostat</li>
+          </ul>
+          <a href="contact.html" class="btn-primary">Get a Quote</a>
+        </div>
+      </div>
+      <div class="popular-card">
+        <div class="badge">Recommended</div>
+        <div class="img-wrap">
+          <img loading="lazy" src="images/boiler-glowworm-micracom.png" alt="Glow-Worm Micracom Combi">
+        </div>
+        <div class="info">
+          <h3>Glow-Worm Micracom Combi</h3>
+          <div class="price">From &pound;1,795</div>
+          <ul class="details">
+            <li>Great value for money</li>
+            <li>Compact design</li>
+            <li>Supply and fit included</li>
+            <li>Free wireless thermostat</li>
+          </ul>
+          <a href="contact.html" class="btn-primary">Get a Quote</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALL BOILERS -->
+<section>
+  <div class="container">
+    <h2 class="section-title">All Boiler <span>Packages</span></h2>
     <p class="section-subtitle">Competitive prices on leading UK boiler brands, supplied and fitted.</p>
+    <div class="boiler-grid">
+      <div class="boiler-card">
+        <div class="img-wrap">
+          <img loading="lazy" src="images/boiler-ideal-mini.png" alt="Ideal i-mini Combi">
+        </div>
+        <div class="info">
+          <h3>Ideal i-mini Combi</h3>
+          <div class="brand">Ideal</div>
+          <div class="price">From &pound;1,850</div>
+        </div>
+      </div>
+      <div class="boiler-card">
+        <div class="img-wrap">
+          <img loading="lazy" src="images/boiler-ideal-logic-plus.png" alt="Ideal Logic Plus Combi">
+        </div>
+        <div class="info">
+          <h3>Ideal Logic Plus Combi</h3>
+          <div class="brand">Ideal</div>
+          <div class="price">From &pound;1,950</div>
+        </div>
+      </div>
+      <div class="boiler-card">
+        <div class="img-wrap">
+          <img loading="lazy" src="images/boiler-ideal-logic-max.png" alt="Ideal Logic Max Combi">
+        </div>
+        <div class="info">
+          <h3>Ideal Logic Max Combi</h3>
+          <div class="brand">Ideal</div>
+          <div class="price">From &pound;2,250</div>
+        </div>
+      </div>
+      <div class="boiler-card">
+        <div class="img-wrap">
+          <img loading="lazy" src="images/boiler-main-eco.png" alt="Main Eco Compact Combi">
+        </div>
+        <div class="info">
+          <h3>Main Eco Compact Combi</h3>
+          <div class="brand">BAXI</div>
+          <div class="price">From &pound;1,850</div>
+        </div>
+      </div>
+      <div class="boiler-card">
+        <div class="img-wrap">
+          <img loading="lazy" src="images/boiler-baxi-600.png" alt="BAXI 600 Series">
+        </div>
+        <div class="info">
+          <h3>BAXI 600 Series</h3>
+          <div class="brand">BAXI</div>
+          <div class="price">From &pound;2,050</div>
+        </div>
+      </div>
+      <div class="boiler-card">
+        <div class="img-wrap">
+          <img loading="lazy" src="images/boiler-baxi-800.png" alt="BAXI 800 Series">
+        </div>
+        <div class="info">
+          <h3>BAXI 800 Series</h3>
+          <div class="brand">BAXI</div>
+          <div class="price">From &pound;2,150</div>
+        </div>
+      </div>
+      <div class="boiler-card">
+        <div class="img-wrap">
+          <img loading="lazy" src="images/boiler-glowworm-micracom.png" alt="Glow-Worm Micracom Combi">
+        </div>
+        <div class="info">
+          <h3>Glow-Worm Micracom Combi</h3>
+          <div class="brand">Glow-Worm</div>
+          <div class="price">From &pound;1,795</div>
+        </div>
+      </div>
+      <div class="boiler-card">
+        <div class="img-wrap">
+          <img loading="lazy" src="images/boiler-glowworm-ultimate.png" alt="Glow-Worm Ultimate Combi">
+        </div>
+        <div class="info">
+          <h3>Glow-Worm Ultimate Combi</h3>
+          <div class="brand">Glow-Worm</div>
+          <div class="price">From &pound;2,050</div>
+          <span class="note">Exclusive 10yr warranty with Tiger Gas</span>
+        </div>
+      </div>
+      <div class="boiler-card">
+        <div class="img-wrap">
+          <img loading="lazy" src="images/boiler-glowworm-energy.png" alt="Glow-Worm Energy Combi">
+        </div>
+        <div class="info">
+          <h3>Glow-Worm Energy Combi</h3>
+          <div class="brand">Glow-Worm</div>
+          <div class="price">From &pound;2,150</div>
+          <span class="note">Exclusive 10yr warranty with Tiger Gas</span>
+        </div>
+      </div>
+      <div class="boiler-card">
+        <div class="img-wrap">
+          <img loading="lazy" src="images/boiler-alpha-evoke.png" alt="Alpha Evoke">
+        </div>
+        <div class="info">
+          <h3>Alpha Evoke</h3>
+          <div class="brand">Alpha</div>
+          <div class="price">From &pound;1,800</div>
+        </div>
+      </div>
+      <div class="boiler-card">
+        <div class="img-wrap">
+          <img loading="lazy" src="images/boiler-vokera.png" alt="Vokera Easy-Heat i">
+        </div>
+        <div class="info">
+          <h3>Vokera Easy-Heat i</h3>
+          <div class="brand">Vokera</div>
+          <div class="price">From &pound;1,700</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <table class="pricing-table">
-      <thead>
-        <tr>
-          <th>Boiler</th>
-          <th>Price</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Ideal i-mini Combi</td>
-          <td class="price">From &pound;1,850</td>
-        </tr>
-        <tr>
-          <td>Ideal Logic Plus Combi</td>
-          <td class="price">From &pound;1,950</td>
-        </tr>
-        <tr>
-          <td>Ideal Logic Max Combi</td>
-          <td class="price">From &pound;2,250</td>
-        </tr>
-        <tr>
-          <td>Main Eco Compact Combi (BAXI)</td>
-          <td class="price">From &pound;1,850</td>
-        </tr>
-        <tr>
-          <td>BAXI 600 Series</td>
-          <td class="price">From &pound;2,050</td>
-        </tr>
-        <tr>
-          <td>BAXI 800 Series</td>
-          <td class="price">From &pound;2,150</td>
-        </tr>
-        <tr>
-          <td>Glow-Worm Micracom Combi</td>
-          <td class="price">From &pound;1,795</td>
-        </tr>
-        <tr>
-          <td>Glow-Worm Ultimate Combi<span class="note">Exclusive 10yr warranty with Tiger Gas</span></td>
-          <td class="price">From &pound;2,050</td>
-        </tr>
-        <tr>
-          <td>Glow-Worm Energy Combi<span class="note">Exclusive 10yr warranty with Tiger Gas</span></td>
-          <td class="price">From &pound;2,150</td>
-        </tr>
-        <tr>
-          <td>Alpha Evoke</td>
-          <td class="price">From &pound;1,800</td>
-        </tr>
-        <tr>
-          <td>Vokera Easy-Heat i</td>
-          <td class="price">From &pound;1,700</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <!-- ATAG -->
-    <div class="atag-section">
-      <h2>ATAG <span>Heating Technology</span> Partner</h2>
-      <p>We are proud to announce we have officially became an ATAG Heating Technology Partner! ATAG are very reliable, innovative, powerful and efficient. Their range boasts 98% efficiency on selected appliances with an industry leading 18 year warranty.</p>
-      <table class="pricing-table" style="max-width: 500px; margin: 0 auto;">
-        <thead>
-          <tr>
-            <th>Boiler</th>
-            <th>Price</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style="color: #ccc;">ATAG iC Combination</td>
-            <td class="price">From &pound;2,400</td>
-          </tr>
-          <tr>
-            <td style="color: #ccc;">ATAG iC Economiser</td>
-            <td class="price">From &pound;2,850</td>
-          </tr>
-        </tbody>
-      </table>
+<!-- ATAG PARTNER -->
+<section class="alt">
+  <div class="container">
+    <h2 class="section-title">ATAG <span>Heating Technology</span> Partner</h2>
+    <div class="atag-partner" style="margin-top: 36px;">
+      <div class="img-wrap">
+        <img loading="lazy" src="images/boiler-atag.png" alt="ATAG Boiler">
+      </div>
+      <div>
+        <h3>Premium Manufacturer</h3>
+        <p>We are proud to announce we have officially became an ATAG Heating Technology Partner! ATAG are a premium manufacturer, they incorporate the absolute best of materials and components within the appliance.</p>
+        <p>Their range boasts 98% efficiency on selected appliances with an industry leading 18 year warranty.</p>
+        <div class="atag-models">
+          <div class="atag-model">
+            <span class="name">ATAG iC Combination</span>
+            <span class="price">From &pound;2,400</span>
+          </div>
+          <div class="atag-model">
+            <span class="name">ATAG iC Economiser</span>
+            <span class="price">From &pound;2,850</span>
+          </div>
+        </div>
+        <a href="contact.html" class="btn-primary" style="margin-top: 24px; display: inline-block;">Get a Quote</a>
+      </div>
     </div>
 
-    <div class="callout-box">
+    <div class="price-note">
       <p><strong>Please Note:</strong> Any price that you see above is a guide price. You will receive a final quote when you speak to our engineer.</p>
     </div>
   </div>
