@@ -11,6 +11,132 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .ashp-hero {
+      background: url('images/ashp-hero.jpg') center/cover no-repeat;
+      position: relative;
+      padding: 100px 0;
+      text-align: center;
+      color: #fff;
+    }
+    .ashp-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,.55);
+    }
+    .ashp-hero .container { position: relative; z-index: 1; }
+    .ashp-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+    .ashp-hero h1 span { color: var(--orange); }
+    .ashp-hero p {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,.85);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .ashp-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .ashp-intro img {
+      width: 100%;
+      border-radius: 6px;
+      box-shadow: 0 4px 16px rgba(0,0,0,.12);
+    }
+    .ashp-intro p {
+      color: #666;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .grant-banner {
+      background: var(--dark);
+      color: #fff;
+      padding: 48px 0;
+      text-align: center;
+    }
+    .grant-banner h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+    .grant-banner .amount {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--orange);
+      margin: 16px 0;
+    }
+    .grant-banner p {
+      color: rgba(255,255,255,.75);
+      max-width: 600px;
+      margin: 0 auto 24px;
+      line-height: 1.7;
+    }
+
+    .ashp-services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .ashp-card {
+      background: #fff;
+      border-radius: 6px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+      padding: 32px 24px;
+      text-align: center;
+      border-top: 3px solid var(--orange);
+    }
+    .ashp-card .icon {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+    }
+    .ashp-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+    .ashp-card p {
+      color: #666;
+      font-size: .9rem;
+      line-height: 1.7;
+    }
+
+    .benefits-list {
+      list-style: none;
+      padding: 0;
+      max-width: 600px;
+    }
+    .benefits-list li {
+      padding: 12px 0;
+      font-size: 1rem;
+      color: #555;
+      border-bottom: 1px solid #eee;
+    }
+    .benefits-list li::before {
+      content: '\2713';
+      color: var(--orange);
+      font-weight: 700;
+      margin-right: 12px;
+    }
+
+    @media (max-width: 768px) {
+      .ashp-intro { grid-template-columns: 1fr; }
+      .ashp-services { grid-template-columns: 1fr; }
+      .ashp-hero h1 { font-size: 1.75rem; }
+      .ashp-hero { padding: 60px 0; }
+      .grant-banner .amount { font-size: 2.2rem; }
+    }
+  </style>
 </head>
 <body>
 
@@ -37,44 +163,63 @@
 
 <main>
 
-<!-- PAGE HERO -->
-<section class="page-hero">
+<!-- HERO WITH ASHP IMAGE -->
+<section class="ashp-hero">
   <div class="container">
     <h1>Air Source <span>Heat Pumps</span></h1>
     <p>Installation, servicing and repair of air source heat pumps across the North East.</p>
   </div>
 </section>
 
-<!-- CONTENT -->
+<!-- INTRO -->
 <section>
   <div class="container">
-    <div class="content-section" style="text-align: center;">
-      <p style="font-size: 1.15rem; max-width: 700px; margin: 0 auto 24px;">We are able to install, service and repair Air Source Heat Pumps. There is currently a government grant of &pound;7,500 available to every household to install an ASHP system as part of the ECO4.</p>
-
-      <div class="feature-grid" style="margin-top: 40px;">
-        <div class="feature-card">
-          <div class="feature-icon">&#127968;</div>
-          <h3>Installation</h3>
-          <p>Full ASHP system installation for your home.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">&#128736;</div>
-          <h3>Servicing</h3>
-          <p>Annual servicing to keep your heat pump running efficiently.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">&#128295;</div>
-          <h3>Repair</h3>
-          <p>Fast, reliable repairs to get your system back up and running.</p>
-        </div>
+    <div class="ashp-intro">
+      <img loading="lazy" src="images/ashp-hero.jpg" alt="Air source heat pump unit">
+      <div>
+        <h2 class="section-title" style="text-align:left;">What is an <span>ASHP?</span></h2>
+        <p>An air source heat pump absorbs heat from outside air to heat your home and hot water. They work efficiently even when outdoor temperatures are low, making them ideal for the North East climate.</p>
+        <p>We are able to install, service and repair air source heat pumps. Our engineers are fully trained and qualified to work on ASHP systems.</p>
+        <ul class="benefits-list">
+          <li>Lower energy bills</li>
+          <li>Reduced carbon footprint</li>
+          <li>Works in cold climates</li>
+          <li>Low maintenance</li>
+          <li>Government grant eligible</li>
+        </ul>
       </div>
+    </div>
+  </div>
+</section>
 
-      <div class="callout-box" style="text-align: left; margin-top: 40px;">
-        <p><strong>Government Grant:</strong> A &pound;7,500 grant is currently available through the ECO4 scheme to help cover the cost of installing an air source heat pump. Contact us to find out if you are eligible.</p>
+<!-- GOVERNMENT GRANT BANNER -->
+<div class="grant-banner">
+  <h2>Government Grant Available</h2>
+  <div class="amount">&pound;7,500</div>
+  <p>There is currently a government grant of &pound;7,500 available to every household to install an ASHP system as part of the ECO4 scheme. Contact us to find out if you are eligible.</p>
+  <a href="tel:07999943640" class="btn-primary">Check Your Eligibility</a>
+</div>
+
+<!-- SERVICES -->
+<section>
+  <div class="container">
+    <h2 class="section-title">Our ASHP <span>Services</span></h2>
+    <p class="section-subtitle">From new installations to annual servicing and emergency repairs.</p>
+    <div class="ashp-services">
+      <div class="ashp-card">
+        <div class="icon">&#127968;</div>
+        <h3>Installation</h3>
+        <p>Full ASHP system installation for your home. We handle everything from survey to commissioning, ensuring your system is set up correctly from day one.</p>
       </div>
-
-      <div style="margin-top: 40px;">
-        <a href="tel:07999943640" class="btn-primary">Call Us to Discuss</a>
+      <div class="ashp-card">
+        <div class="icon">&#128736;</div>
+        <h3>Servicing</h3>
+        <p>Annual servicing to keep your heat pump running at peak efficiency. Regular maintenance extends the lifespan of your system and keeps your energy bills low.</p>
+      </div>
+      <div class="ashp-card">
+        <div class="icon">&#128295;</div>
+        <h3>Repair</h3>
+        <p>Fast, reliable repairs to get your system back up and running. Our engineers are experienced with all major ASHP brands and can diagnose faults quickly.</p>
       </div>
     </div>
   </div>
