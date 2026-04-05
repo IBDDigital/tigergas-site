@@ -161,6 +161,69 @@
   </div>
 </section>
 
+<!-- GOOGLE REVIEWS -->
+<section class="reviews-section">
+  <div class="container">
+    <div class="google-badge">
+      <div class="google-logo">
+        <svg viewBox="0 0 24 24" width="28" height="28"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+        <span>Google Reviews</span>
+      </div>
+      <div class="google-rating">
+        <span class="rating-number">5.0</span>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <span class="review-count">40+ reviews</span>
+      </div>
+    </div>
+
+    <div class="testimonial-slider" id="testimonialSlider">
+      <div class="testimonial-track">
+        <div class="testimonial">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"Great service from start to finish. Surveyed my house and identified exactly what it needed and broke it down for me to understand. Put in my new boiler very quickly and cleanly. Zero hassle, very professional."</p>
+          <div class="author">Lewis Alderson</div>
+        </div>
+        <div class="testimonial">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"Tiger Gas are a great service! Very prompt with the jobs, professional and approachable. Everything is explained what's been done and why. Thanks!"</p>
+          <div class="author">Emily Jackson</div>
+        </div>
+        <div class="testimonial">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"Class A result. I finally have hot running water and a very small, neat boiler. Only saw him twice for quick questions and forgot he was here!"</p>
+          <div class="author">Nikki Cheverall</div>
+        </div>
+        <div class="testimonial">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"Jabs repaired my hot water and central heating when I called just after 9pm on a Sunday for an emergency callout. He said he'd come and he did exactly at the time agreed upon. Top lad!"</p>
+          <div class="author">A C</div>
+        </div>
+        <div class="testimonial">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"Very friendly and reliable. Kept us up to date with what they were doing, extremely efficient and tidied up after themselves. Good job!"</p>
+          <div class="author">Fatima Begum</div>
+        </div>
+        <div class="testimonial">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"Highly recommend. Jabs did a great job installing a new boiler. Fast, efficient, helpful, clean worker with excellent communications at a good price."</p>
+          <div class="author">Lynn</div>
+        </div>
+        <div class="testimonial">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"Installed a new boiler. Very clean and professional, tidied up after himself. Knew exactly what he was doing and showed me how to use the boiler properly. Definitely my go to man now."</p>
+          <div class="author">S B</div>
+        </div>
+        <div class="testimonial">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"Very friendly and knowledgeable young man. Responded to my job almost instantly and was out to my house within the hour. Had my boiler up and running the same afternoon. Would highly recommend."</p>
+          <div class="author">Billy Anderson</div>
+        </div>
+      </div>
+      <div class="slider-dots" id="sliderDots"></div>
+    </div>
+  </div>
+</section>
+
 <!-- CTA BANNER -->
 <div class="cta-banner">
   <div class="container">
@@ -233,5 +296,28 @@
   </div>
 </footer>
 
+<script>
+(function(){
+  var track = document.querySelector('.testimonial-track');
+  var slides = document.querySelectorAll('.testimonial');
+  var dotsWrap = document.getElementById('sliderDots');
+  var current = 0;
+  var total = slides.length;
+  for(var i=0;i<total;i++){
+    var d = document.createElement('span');
+    d.className = 'dot' + (i===0?' active':'');
+    d.dataset.i = i;
+    d.onclick = function(){ goTo(+this.dataset.i); };
+    dotsWrap.appendChild(d);
+  }
+  function goTo(n){
+    current = n;
+    track.style.transform = 'translateX(-'+current*100+'%)';
+    var dots = dotsWrap.querySelectorAll('.dot');
+    for(var j=0;j<dots.length;j++) dots[j].className = 'dot'+(j===current?' active':'');
+  }
+  setInterval(function(){ goTo((current+1)%total); }, 5000);
+})();
+</script>
 </body>
 </html>
