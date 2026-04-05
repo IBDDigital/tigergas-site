@@ -322,5 +322,6 @@
   setInterval(function(){ goTo((current+1)%total); }, 6000);
 })();
 </script>
+<script>window.addEventListener("scroll",function(){document.querySelector("nav").classList.toggle("scrolled",window.scrollY>30)});</script>
 </body>
 </html>

@@ -49,11 +49,19 @@ nav .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 68px;
+  height: 100px;
+  transition: height .3s ease;
+}
+nav.scrolled .container {
+  height: 60px;
 }
 nav .logo img {
-  height: 40px;
+  height: 70px;
   width: auto;
+  transition: height .3s ease;
+}
+nav.scrolled .logo img {
+  height: 36px;
 }
 nav .logo a { display: inline-block; line-height: 0; }
 nav ul { list-style: none; display: flex; gap: 28px; }
