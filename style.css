@@ -920,51 +920,122 @@ footer ul a:hover { color: var(--orange); }
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
+  /* Base */
+  body { font-size: 16px; }
+  .container { padding: 0 16px; }
+  section { padding: 48px 0; }
+
+  /* Nav */
   .hamburger { display: block; }
+  nav .container { height: 64px; }
+  nav .logo img { height: 44px; }
+  nav.scrolled .container { height: 52px; }
+  nav.scrolled .logo img { height: 32px; }
+  nav.scrolled ul { top: 52px; }
   nav ul {
     display: none;
     position: absolute;
-    top: 68px;
+    top: 64px;
     left: 0;
     right: 0;
     background: var(--dark);
     flex-direction: column;
     padding: 16px 24px;
-    gap: 16px;
+    gap: 0;
     box-shadow: 0 4px 12px rgba(0,0,0,.3);
+    max-height: 80vh;
+    overflow-y: auto;
   }
   nav ul.open { display: flex; }
+  nav ul li { border-bottom: 1px solid rgba(255,255,255,.08); }
+  nav ul li:last-child { border-bottom: none; }
+  nav ul a { display: block; padding: 14px 0; font-size: .95rem; }
+  /* Dropdown on mobile: tap to toggle, not hover */
+  nav li:hover .dropdown { display: none; }
   nav li .dropdown {
     position: static;
     box-shadow: none;
     min-width: 0;
-    padding: 0 0 0 16px;
+    padding: 0 0 8px 16px;
+    display: none;
   }
-  nav li .dropdown a { padding: 8px 0; }
   nav li.has-dropdown.open .dropdown { display: block; }
-  .hero h1 { font-size: 2rem; }
+  nav li .dropdown a { padding: 10px 0; font-size: .9rem; }
+
+  /* Hero */
   .hero { padding: 60px 0; }
-  .page-hero h1 { font-size: 1.8rem; }
-  .about-grid { grid-template-columns: 1fr; gap: 32px; }
+  .hero h1 { font-size: 1.75rem; }
+  .hero p { font-size: 1rem; margin-bottom: 24px; }
+  .hero .btns { flex-direction: column; align-items: center; gap: 12px; }
+
+  /* Buttons */
+  .btn-primary { padding: 14px 28px; font-size: .9rem; width: 100%; text-align: center; }
+  .btn-outline { padding: 12px 28px; font-size: .9rem; width: 100%; text-align: center; }
+  .btn-primary:hover, .btn-outline:hover { transform: none; }
+
+  /* Section titles */
+  .section-title { font-size: 1.6rem; }
+  .section-subtitle { font-size: 1rem; margin-bottom: 32px; }
+
+  /* Trust bar */
+  .trust-bar { padding: 20px 0; }
+  .trust-items { gap: 20px; justify-content: space-around; }
+  .trust-item .num { font-size: 1.2rem; }
+  .trust-item .txt { font-size: .7rem; }
+
+  /* Page hero (subpages) */
+  .page-hero { height: auto; padding: 48px 0; min-height: 0; }
+  .page-hero h1 { font-size: 1.6rem; }
+  .page-hero p { font-size: 1rem; }
+
+  /* Grids to single column */
+  .about-grid { grid-template-columns: 1fr; gap: 24px; }
+  .about-grid h3 { font-size: 1.3rem; }
   .about-highlights { grid-template-columns: 1fr; }
   .about-cards { grid-template-columns: 1fr; }
   .services-grid { grid-template-columns: 1fr; }
+  .service-card img { height: 180px; }
   .contact-grid { grid-template-columns: 1fr; }
   .contact-cards { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: 24px; }
-  .footer-bottom { flex-direction: column; gap: 8px; }
-  .trust-items { gap: 24px; }
+  .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
   .feature-grid { grid-template-columns: 1fr; }
   .checklist { grid-template-columns: 1fr; }
   .issues-grid { grid-template-columns: 1fr; }
   .benefits-list { grid-template-columns: 1fr; }
+
+  /* CTA banner */
+  .cta-banner { padding: 40px 0; }
+  .cta-banner h2 { font-size: 1.5rem; }
+  .cta-banner p { font-size: 1rem; margin-bottom: 20px; }
+  .cta-banner .btn-dark { padding: 14px 32px; font-size: .9rem; }
+
+  /* Reviews / Testimonials */
+  .reviews-section { padding: 40px 0; }
+  .google-badge { gap: 16px; }
+  .rating-number { font-size: 1.6rem; }
+  .testimonial-slider { min-height: 220px; }
+  .testimonial p { font-size: .95rem; }
+
+  /* FAQ */
+  .faq-question { font-size: .95rem; padding: 16px 36px 16px 0; }
+
+  /* Pricing table */
   .pricing-table thead th,
   .pricing-table tbody td { padding: 10px 14px; font-size: .85rem; }
+
+  /* ATAG section */
   .atag-section { padding: 32px 20px; }
+  .atag-section h2 { font-size: 1.3rem; }
+
+  /* Callout box */
+  .callout-box { padding: 20px; }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .feature-grid { grid-template-columns: repeat(2, 1fr); }
   .issues-grid { grid-template-columns: repeat(2, 1fr); }
+  .about-cards { grid-template-columns: repeat(2, 1fr); }
+  .contact-grid { grid-template-columns: repeat(2, 1fr); }
 }
