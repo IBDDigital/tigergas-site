@@ -837,15 +837,23 @@ footer ul a:hover { color: var(--orange); }
   position: relative;
   max-width: 700px;
   margin: 0 auto;
+  min-height: 180px;
 }
 .testimonial-track {
-  display: flex;
-  transition: transform .5s ease;
+  position: relative;
 }
 .testimonial {
-  min-width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   padding: 0 20px;
   box-sizing: border-box;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.testimonial.active {
+  opacity: 1;
 }
 .testimonial .stars {
   color: #fbbc05;
