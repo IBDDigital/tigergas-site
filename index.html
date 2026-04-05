@@ -8,8 +8,10 @@
   <meta name="description" content="Tiger Gas - Professional gas, heating and plumbing services across the North East. Gas Safe registered engineers. 24/7 call-outs available.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="images/skyline.jpg">
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
 </head>
 <body>
 
@@ -33,6 +35,8 @@
     </ul>
   </div>
 </nav>
+
+<main>
 
 <!-- HERO -->
 <section class="hero">
@@ -84,7 +88,7 @@
         <div class="gas-safe">Gas Safe Registered</div>
       </div>
       <div>
-        <img src="images/hero.jpg" alt="Boiler controls" style="width:100%; border-radius: var(--radius); box-shadow: 0 4px 16px rgba(0,0,0,.12);">
+        <img loading="lazy" src="images/hero.jpg" alt="Boiler controls" style="width:100%; border-radius: var(--radius); box-shadow: 0 4px 16px rgba(0,0,0,.12);">
       </div>
     </div>
   </div>
@@ -97,7 +101,7 @@
     <p class="section-subtitle">From new boiler installations to emergency plumbing, we provide a full range of gas, heating and plumbing services.</p>
     <div class="services-grid">
       <div class="service-card">
-        <img src="images/service-boiler-new.png" alt="New boiler installation">
+        <img loading="lazy" src="images/service-boiler-new.jpg" alt="New boiler installation">
         <div class="card-body">
           <h3>New Boiler Packages</h3>
           <p>Complete boiler installation packages from leading UK manufacturers with full warranties included.</p>
@@ -105,7 +109,7 @@
         </div>
       </div>
       <div class="service-card">
-        <img src="images/service-boiler-service.png" alt="Boiler servicing">
+        <img loading="lazy" src="images/service-boiler-service.jpg" alt="Boiler servicing">
         <div class="card-body">
           <h3>Boiler Service</h3>
           <p>Annual boiler servicing to keep your heating running efficiently and maintain your warranty.</p>
@@ -113,7 +117,7 @@
         </div>
       </div>
       <div class="service-card">
-        <img src="images/service-boiler-repair.png" alt="Boiler repair">
+        <img loading="lazy" src="images/service-boiler-repair.jpg" alt="Boiler repair">
         <div class="card-body">
           <h3>Boiler Repair</h3>
           <p>Fast, reliable boiler repairs to get your heating and hot water back up and running.</p>
@@ -121,7 +125,7 @@
         </div>
       </div>
       <div class="service-card">
-        <img src="images/service-cookers.png" alt="Gas cookers and hobs">
+        <img loading="lazy" src="images/service-cookers.jpg" alt="Gas cookers and hobs">
         <div class="card-body">
           <h3>Cookers &amp; Hobs</h3>
           <p>Safe installation, servicing and repair of gas cookers, hobs and range cookers.</p>
@@ -129,7 +133,7 @@
         </div>
       </div>
       <div class="service-card">
-        <img src="images/service-gas-safety.jpg" alt="Gas safety certificate">
+        <img loading="lazy" src="images/service-gas-safety.jpg" alt="Gas safety certificate">
         <div class="card-body">
           <h3>Gas Safety Checks</h3>
           <p>Landlord gas safety certificates and domestic gas safety inspections by registered engineers.</p>
@@ -137,7 +141,7 @@
         </div>
       </div>
       <div class="service-card">
-        <img src="images/service-plumbing.jpg" alt="Plumbing services">
+        <img loading="lazy" src="images/service-plumbing.jpg" alt="Plumbing services">
         <div class="card-body">
           <h3>Plumbing Services</h3>
           <p>General plumbing repairs, installations and maintenance for your home or business.</p>
@@ -181,6 +185,8 @@
     </div>
   </div>
 </section>
+
+</main>
 
 <!-- FOOTER -->
 <footer>
