@@ -11,6 +11,50 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .ck-hero {
+      background: url('images/cookers-stove.jpg') center/cover no-repeat;
+      position: relative; padding:100px 0; text-align:center; color:#fff;
+    }
+    .ck-hero::before { content:''; position:absolute; inset:0; background:rgba(0,0,0,.55); }
+    .ck-hero .container { position:relative; z-index:1; }
+    .ck-hero h1 { font-family:'Playfair Display',serif; font-size:2.5rem; font-weight:800; margin-bottom:16px; }
+    .ck-hero h1 span { color:var(--orange); }
+    .ck-hero p { font-size:1.15rem; color:rgba(255,255,255,.85); max-width:600px; margin:0 auto; line-height:1.7; }
+
+    .ck-features { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
+    .ck-feat { text-align:center; padding:28px 20px; background:#fff; border-radius:6px; box-shadow:0 2px 12px rgba(0,0,0,.06); border-top:3px solid var(--orange); }
+    .ck-feat .icon { font-size:2rem; margin-bottom:12px; }
+    .ck-feat h3 { font-family:'Playfair Display',serif; font-size:1rem; color:var(--dark); margin-bottom:8px; }
+    .ck-feat p { font-size:.85rem; color:#666; line-height:1.6; }
+
+    .ck-pricing { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+    .ck-price-card {
+      background:#fff; border-radius:6px; box-shadow:0 2px 12px rgba(0,0,0,.08);
+      text-align:center; padding:0; overflow:hidden; border-top:4px solid var(--orange); transition:transform .2s;
+    }
+    .ck-price-card:hover { transform:translateY(-4px); }
+    .ck-price-card img { width:100%; height:180px; object-fit:cover; }
+    .ck-price-card .info { padding:24px; }
+    .ck-price-card h3 { font-family:'Playfair Display',serif; font-size:1.1rem; color:var(--dark); margin-bottom:12px; }
+    .ck-price-card .price { font-size:2rem; font-weight:700; color:var(--orange); margin-bottom:12px; }
+    .ck-price-card p { font-size:.85rem; color:#666; line-height:1.6; margin-bottom:16px; }
+    .ck-price-card .btn-primary { padding:10px 24px; font-size:.85rem; }
+
+    .ck-safety {
+      background: var(--dark); color:#fff; padding:48px 0; text-align:center;
+    }
+    .ck-safety h2 { font-family:'Playfair Display',serif; font-size:1.5rem; margin-bottom:16px; }
+    .ck-safety h2 span { color:var(--orange); }
+    .ck-safety p { color:rgba(255,255,255,.75); max-width:700px; margin:0 auto; line-height:1.8; }
+
+    @media (max-width:768px) {
+      .ck-features { grid-template-columns:1fr 1fr; }
+      .ck-pricing { grid-template-columns:1fr; }
+      .ck-hero h1 { font-size:1.75rem; }
+      .ck-hero { padding:60px 0; }
+    }
+  </style>
 </head>
 <body>
 
@@ -30,15 +74,15 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li class="has-dropdown"><a href="services.html">Services</a>
-            <div class="dropdown">
-              <a href="new-boiler-packages.html">New Boiler Packages</a>
-              <a href="boiler-service.html">Boiler Service</a>
-              <a href="boiler-repair.html">Boiler Repair</a>
-              <a href="gas-safety-checks.html">Gas Safety Checks</a>
-              <a href="cookers-and-hobs.html">Cookers &amp; Hobs</a>
-              <a href="air-source-heat-pumps.html">Air Source Heat Pumps</a>
-            </div>
-          </li>
+        <div class="dropdown">
+          <a href="new-boiler-packages.html">New Boiler Packages</a>
+          <a href="boiler-service.html">Boiler Service</a>
+          <a href="boiler-repair.html">Boiler Repair</a>
+          <a href="gas-safety-checks.html">Gas Safety Checks</a>
+          <a href="cookers-and-hobs.html">Cookers &amp; Hobs</a>
+          <a href="air-source-heat-pumps.html">Air Source Heat Pumps</a>
+        </div>
+      </li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </div>
@@ -46,11 +90,11 @@
 
 <main>
 
-<!-- PAGE HERO -->
-<section class="page-hero">
+<!-- HERO -->
+<section class="ck-hero">
   <div class="container">
-    <h1>Gas Cookers and <span>Hobs</span></h1>
-    <p>Professional installation, servicing and repair of gas cookers and hobs by Gas Safe registered engineers.</p>
+    <h1>Gas Cookers &amp; <span>Hobs</span></h1>
+    <p>Upgrading your kitchen? Professional gas cooker and hob installation by Gas Safe registered engineers.</p>
   </div>
 </section>
 
@@ -58,55 +102,97 @@
 <section>
   <div class="container">
     <h2 class="section-title">Why Choose <span>Tiger Gas</span></h2>
-    <div class="feature-grid">
-      <div class="feature-card">
-        <div class="feature-icon">&#128205;</div>
+    <div class="ck-features">
+      <div class="ck-feat">
+        <div class="icon">&#128205;</div>
         <h3>Local Engineer</h3>
         <p>Based in the North East with fast, reliable service.</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">&#128176;</div>
+      <div class="ck-feat">
+        <div class="icon">&#128176;</div>
         <h3>Low Prices</h3>
         <p>Competitive pricing on all cooker and hob installations.</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">&#128203;</div>
+      <div class="ck-feat">
+        <div class="icon">&#128203;</div>
         <h3>Gas Safe Certificate</h3>
         <p>All work is certified and compliant with Gas Safe regulations.</p>
+      </div>
+      <div class="ck-feat">
+        <div class="icon">&#9201;</div>
+        <h3>Quick Installation</h3>
+        <p>Most installations completed within a couple of hours.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PRICING -->
+<!-- PRICING WITH IMAGES -->
 <section class="alt">
   <div class="container">
     <h2 class="section-title">Installation <span>Prices</span></h2>
-    <table class="pricing-table">
-      <thead>
-        <tr>
-          <th>Appliance</th>
-          <th>Price</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Freestanding Cooker</td>
-          <td class="price">&pound;70</td>
-        </tr>
-        <tr>
-          <td>Range Cooker</td>
-          <td class="price">&pound;90</td>
-        </tr>
-        <tr>
-          <td>Gas Hob</td>
-          <td class="price">&pound;90</td>
-        </tr>
-      </tbody>
-    </table>
+    <p class="section-subtitle">Competitive pricing for all gas cooker and hob installations.</p>
+    <div class="ck-pricing">
+      <div class="ck-price-card">
+        <img loading="lazy" src="images/cookers-freestanding.webp" alt="Freestanding gas cooker">
+        <div class="info">
+          <h3>Freestanding Cooker</h3>
+          <div class="price">&pound;70</div>
+          <p>Customer to supply bayonet fitting, wall plate, stability chain and gas hose, or Tiger Gas can provide for an additional cost.</p>
+          <a href="contact.html" class="btn-primary">Book Now</a>
+        </div>
+      </div>
+      <div class="ck-price-card">
+        <img loading="lazy" src="images/cookers-range.webp" alt="Range cooker">
+        <div class="info">
+          <h3>Range Cooker</h3>
+          <div class="price">&pound;90</div>
+          <p>Same supply requirements as freestanding cooker. Price may vary depending on the complexity of the installation.</p>
+          <a href="contact.html" class="btn-primary">Book Now</a>
+        </div>
+      </div>
+      <div class="ck-price-card">
+        <img loading="lazy" src="images/cookers-gas.jpg" alt="Gas hob">
+        <div class="info">
+          <h3>Gas Hob</h3>
+          <div class="price">&pound;90</div>
+          <p>Price varies with pipe modifications. Additional cost for gas isolation valve if required. We will not cut into your worktop.</p>
+          <a href="contact.html" class="btn-primary">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <div class="callout-box">
-      <p><strong>Please Note:</strong> An existing gas supply must be in place for cooker and hob installations. If you do not have an existing gas supply, please contact us to discuss your options.</p>
+<!-- SAFETY BANNER -->
+<div class="ck-safety">
+  <h2>Important: <span>Gas Supply Required</span></h2>
+  <p>Your property must have an existing gas supply before work can commence. If you do not have an existing gas supply, please contact us to discuss your options. We always deliver on our promises. Work efficiently, effectively and professionally.</p>
+</div>
+
+<!-- FAQ -->
+<section>
+  <div class="container">
+    <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
+    <div class="faq-section">
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">What are the safety requirements for gas cooker installation?</button>
+        <div class="faq-answer">
+          <p>There must be a minimum 75cm gap between the hob and any hood or ceiling. The area must be clear of wallpaper, cupboards, flammable items, cooker hoods, and switches.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">Can you fit electric cookers or hobs?</button>
+        <div class="faq-answer">
+          <p>Currently we only install gas appliances. Electric work requires a qualified electrician. We may expand to electric installations in the future.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">Do you provide gas safety certificates?</button>
+        <div class="faq-answer">
+          <p>Yes, particularly for landlords. See our <a href="gas-safety-checks.html" style="color:var(--orange);">Gas Safety Check</a> page for details and pricing.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>

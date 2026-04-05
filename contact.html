@@ -11,6 +11,59 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .ct-hero {
+      background: url('images/about-skyline.jpg') center/cover no-repeat;
+      position: relative; padding:100px 0; text-align:center; color:#fff;
+    }
+    .ct-hero::before { content:''; position:absolute; inset:0; background:rgba(0,0,0,.55); }
+    .ct-hero .container { position:relative; z-index:1; }
+    .ct-hero h1 { font-family:'Playfair Display',serif; font-size:2.5rem; font-weight:800; margin-bottom:16px; }
+    .ct-hero h1 span { color:var(--orange); }
+    .ct-hero p { font-size:1.15rem; color:rgba(255,255,255,.85); max-width:600px; margin:0 auto; line-height:1.7; }
+
+    .ct-grid { display:grid; grid-template-columns:1fr 1fr; gap:48px; }
+    .ct-main h2 { font-family:'Playfair Display',serif; font-size:1.5rem; color:var(--dark); margin-bottom:24px; }
+    .ct-main h2 span { color:var(--orange); }
+
+    .ct-item { display:flex; gap:16px; align-items:flex-start; padding:20px 0; border-bottom:1px solid #eee; }
+    .ct-item .icon { font-size:1.5rem; min-width:40px; text-align:center; }
+    .ct-item h3 { font-size:1rem; color:var(--dark); margin-bottom:4px; }
+    .ct-item p { color:#666; font-size:.95rem; line-height:1.6; }
+    .ct-item a { color:var(--orange); }
+
+    .ct-hours { background:#fff; border-radius:6px; box-shadow:0 2px 12px rgba(0,0,0,.06); padding:32px; }
+    .ct-hours h2 { font-family:'Playfair Display',serif; font-size:1.3rem; color:var(--dark); margin-bottom:20px; }
+    .ct-hours h2 span { color:var(--orange); }
+    .ct-hours table { width:100%; border-collapse:collapse; }
+    .ct-hours td { padding:10px 0; font-size:.95rem; color:#555; border-bottom:1px solid #f0f0f0; }
+    .ct-hours td:last-child { text-align:right; font-weight:600; color:var(--dark); }
+
+    .ct-emergency {
+      background:var(--orange); color:#fff; border-radius:6px; padding:28px; text-align:center; margin-top:24px;
+    }
+    .ct-emergency h3 { font-size:1.1rem; margin-bottom:8px; }
+    .ct-emergency p { font-size:.9rem; margin-bottom:16px; opacity:.9; }
+    .ct-emergency a {
+      display:inline-block; background:#fff; color:var(--orange); padding:12px 28px;
+      border-radius:4px; font-weight:700; font-size:.95rem; text-decoration:none;
+    }
+
+    .ct-coverage { text-align:center; }
+    .ct-area-list {
+      display:flex; flex-wrap:wrap; justify-content:center; gap:12px; margin-top:24px;
+    }
+    .ct-area-list span {
+      background:#fff; border:1px solid #e5e5e5; padding:8px 20px; border-radius:30px;
+      font-size:.9rem; color:#555;
+    }
+
+    @media (max-width:768px) {
+      .ct-grid { grid-template-columns:1fr; }
+      .ct-hero h1 { font-size:1.75rem; }
+      .ct-hero { padding:60px 0; }
+    }
+  </style>
 </head>
 <body>
 
@@ -30,15 +83,15 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li class="has-dropdown"><a href="services.html">Services</a>
-            <div class="dropdown">
-              <a href="new-boiler-packages.html">New Boiler Packages</a>
-              <a href="boiler-service.html">Boiler Service</a>
-              <a href="boiler-repair.html">Boiler Repair</a>
-              <a href="gas-safety-checks.html">Gas Safety Checks</a>
-              <a href="cookers-and-hobs.html">Cookers &amp; Hobs</a>
-              <a href="air-source-heat-pumps.html">Air Source Heat Pumps</a>
-            </div>
-          </li>
+        <div class="dropdown">
+          <a href="new-boiler-packages.html">New Boiler Packages</a>
+          <a href="boiler-service.html">Boiler Service</a>
+          <a href="boiler-repair.html">Boiler Repair</a>
+          <a href="gas-safety-checks.html">Gas Safety Checks</a>
+          <a href="cookers-and-hobs.html">Cookers &amp; Hobs</a>
+          <a href="air-source-heat-pumps.html">Air Source Heat Pumps</a>
+        </div>
+      </li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </div>
@@ -46,8 +99,8 @@
 
 <main>
 
-<!-- PAGE HERO -->
-<section class="page-hero">
+<!-- HERO -->
+<section class="ct-hero">
   <div class="container">
     <h1>Contact <span>Us</span></h1>
     <p>Get in touch with Tiger Gas for a free, no-obligation quote or to book a service.</p>
@@ -57,29 +110,57 @@
 <!-- CONTACT INFO -->
 <section>
   <div class="container">
-    <div class="contact-cards">
-      <div class="contact-info-card">
-        <div class="icon">&#128222;</div>
-        <h3>Phone</h3>
-        <p><a href="tel:07999943640">07999 943 640</a></p>
-        <p style="margin-top: 8px; font-size: .85rem;">Alternative: <a href="tel:07415776665">07415 776 665</a></p>
+    <div class="ct-grid">
+      <div class="ct-main">
+        <h2>Get in <span>Touch</span></h2>
+        <div class="ct-item">
+          <div class="icon">&#128222;</div>
+          <div>
+            <h3>Phone</h3>
+            <p><a href="tel:07999943640">07999 943 640</a></p>
+            <p style="margin-top:4px; font-size:.85rem;">Alternative: <a href="tel:07415776665">07415 776 665</a></p>
+          </div>
+        </div>
+        <div class="ct-item">
+          <div class="icon">&#9993;</div>
+          <div>
+            <h3>Email</h3>
+            <p><a href="mailto:info@tigergas.co.uk">info@tigergas.co.uk</a></p>
+          </div>
+        </div>
+        <div class="ct-item">
+          <div class="icon">&#128205;</div>
+          <div>
+            <h3>Coverage Area</h3>
+            <p>Covering the North East of England. We can travel within a 50 mile radius of Darlington.</p>
+          </div>
+        </div>
+        <div class="ct-item" style="border-bottom:none;">
+          <div class="icon">&#128203;</div>
+          <div>
+            <h3>Gas Safe Registered</h3>
+            <p>All of our engineers are fully qualified and Gas Safe registered.</p>
+          </div>
+        </div>
       </div>
-      <div class="contact-info-card">
-        <div class="icon">&#9993;</div>
-        <h3>Email</h3>
-        <p><a href="mailto:info@tigergas.co.uk">info@tigergas.co.uk</a></p>
-      </div>
-      <div class="contact-info-card">
-        <div class="icon">&#128336;</div>
-        <h3>Opening Hours</h3>
-        <p>Monday to Friday: 08:00 to 17:00</p>
-        <p>Saturday and Sunday: By appointment</p>
-      </div>
-      <div class="contact-info-card">
-        <div class="icon">&#9888;</div>
-        <h3>Emergency Call-Outs</h3>
-        <p>We offer <strong>24/7 emergency call-outs</strong> for boiler breakdowns and gas emergencies.</p>
-        <p style="margin-top: 8px;"><a href="tel:07999943640" class="btn-primary" style="display: inline-block; padding: 10px 24px; font-size: .85rem;">Call Now</a></p>
+      <div>
+        <div class="ct-hours">
+          <h2>Opening <span>Hours</span></h2>
+          <table>
+            <tr><td>Monday</td><td>08:00 - 17:00</td></tr>
+            <tr><td>Tuesday</td><td>08:00 - 17:00</td></tr>
+            <tr><td>Wednesday</td><td>08:00 - 17:00</td></tr>
+            <tr><td>Thursday</td><td>08:00 - 17:00</td></tr>
+            <tr><td>Friday</td><td>08:00 - 17:00</td></tr>
+            <tr><td>Saturday</td><td>By Appointment</td></tr>
+            <tr><td>Sunday</td><td>By Appointment</td></tr>
+          </table>
+        </div>
+        <div class="ct-emergency">
+          <h3>24/7 Emergency Call-Outs</h3>
+          <p>Boiler broken down? Gas emergency? We are available around the clock.</p>
+          <a href="tel:07999943640">Call Now</a>
+        </div>
       </div>
     </div>
   </div>
@@ -87,9 +168,19 @@
 
 <!-- COVERAGE -->
 <section class="alt">
-  <div class="container" style="text-align: center; max-width: 800px;">
+  <div class="container ct-coverage">
     <h2 class="section-title">Our <span>Coverage</span></h2>
-    <p style="color: #666; font-size: 1.05rem; line-height: 1.8;">We cover Darlington, Middlesbrough, Durham, Sunderland, Newcastle, South Shields and all surrounding areas. We are able to travel within a 50 mile radius of Darlington and in exceptional circumstances, further out.</p>
+    <p style="color:#666; font-size:1.05rem; line-height:1.8; max-width:700px; margin:0 auto;">If you have a specific query or requirement, we are your local gas expert. We can help you no matter what the ask.</p>
+    <div class="ct-area-list">
+      <span>Darlington</span>
+      <span>Middlesbrough</span>
+      <span>Durham</span>
+      <span>Sunderland</span>
+      <span>Newcastle</span>
+      <span>South Shields</span>
+      <span>Stockton</span>
+      <span>Hartlepool</span>
+    </div>
   </div>
 </section>
 

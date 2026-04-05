@@ -11,6 +11,54 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .br-hero {
+      background: url('images/boiler-repair-hero.jpeg') center/cover no-repeat;
+      position: relative; padding:100px 0; text-align:center; color:#fff;
+    }
+    .br-hero::before { content:''; position:absolute; inset:0; background:rgba(0,0,0,.55); }
+    .br-hero .container { position:relative; z-index:1; }
+    .br-hero h1 { font-family:'Playfair Display',serif; font-size:2.5rem; font-weight:800; margin-bottom:16px; }
+    .br-hero h1 span { color:var(--orange); }
+    .br-hero p { font-size:1.15rem; color:rgba(255,255,255,.85); max-width:600px; margin:0 auto; line-height:1.7; }
+
+    .br-intro { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; }
+    .br-intro img { width:100%; border-radius:6px; box-shadow:0 4px 16px rgba(0,0,0,.12); }
+    .br-intro p { color:#666; line-height:1.8; margin-bottom:16px; }
+
+    .br-features { display:grid; grid-template-columns:repeat(5,1fr); gap:20px; }
+    .br-feat { text-align:center; padding:28px 16px; background:#fff; border-radius:6px; box-shadow:0 2px 12px rgba(0,0,0,.06); border-top:3px solid var(--orange); }
+    .br-feat .icon { font-size:1.8rem; margin-bottom:10px; }
+    .br-feat h3 { font-family:'Playfair Display',serif; font-size:.95rem; color:var(--dark); margin-bottom:6px; }
+    .br-feat p { font-size:.8rem; color:#666; line-height:1.5; }
+
+    .br-issues { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+    .br-issue {
+      background:#fff; border-radius:6px; padding:28px; box-shadow:0 2px 8px rgba(0,0,0,.06);
+      border-left:4px solid var(--orange);
+    }
+    .br-issue h4 { font-size:1rem; color:var(--dark); margin-bottom:8px; }
+    .br-issue p { font-size:.9rem; color:#666; line-height:1.6; }
+
+    .br-pricing { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+    .br-price-card {
+      background:#fff; border-radius:6px; box-shadow:0 2px 12px rgba(0,0,0,.08);
+      text-align:center; padding:36px 24px; border-top:4px solid var(--orange); transition:transform .2s;
+    }
+    .br-price-card:hover { transform:translateY(-4px); }
+    .br-price-card h3 { font-family:'Playfair Display',serif; font-size:1rem; color:var(--dark); margin-bottom:4px; }
+    .br-price-card .time { font-size:.85rem; color:#999; margin-bottom:12px; }
+    .br-price-card .price { font-size:2rem; font-weight:700; color:var(--orange); }
+    .br-price-card .btn-primary { margin-top:20px; padding:10px 24px; font-size:.85rem; }
+
+    @media (max-width:768px) {
+      .br-intro { grid-template-columns:1fr; }
+      .br-features { grid-template-columns:1fr 1fr; }
+      .br-issues, .br-pricing { grid-template-columns:1fr; }
+      .br-hero h1 { font-size:1.75rem; }
+      .br-hero { padding:60px 0; }
+    }
+  </style>
 </head>
 <body>
 
@@ -30,15 +78,15 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li class="has-dropdown"><a href="services.html">Services</a>
-            <div class="dropdown">
-              <a href="new-boiler-packages.html">New Boiler Packages</a>
-              <a href="boiler-service.html">Boiler Service</a>
-              <a href="boiler-repair.html">Boiler Repair</a>
-              <a href="gas-safety-checks.html">Gas Safety Checks</a>
-              <a href="cookers-and-hobs.html">Cookers &amp; Hobs</a>
-              <a href="air-source-heat-pumps.html">Air Source Heat Pumps</a>
-            </div>
-          </li>
+        <div class="dropdown">
+          <a href="new-boiler-packages.html">New Boiler Packages</a>
+          <a href="boiler-service.html">Boiler Service</a>
+          <a href="boiler-repair.html">Boiler Repair</a>
+          <a href="gas-safety-checks.html">Gas Safety Checks</a>
+          <a href="cookers-and-hobs.html">Cookers &amp; Hobs</a>
+          <a href="air-source-heat-pumps.html">Air Source Heat Pumps</a>
+        </div>
+      </li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </div>
@@ -46,109 +94,122 @@
 
 <main>
 
-<!-- PAGE HERO -->
-<section class="page-hero">
+<!-- HERO -->
+<section class="br-hero">
   <div class="container">
     <h1>Boiler <span>Repair</span></h1>
     <p>Fast, reliable boiler repairs from Gas Safe registered engineers. We aim to respond within 2 hours.</p>
   </div>
 </section>
 
-<!-- FEATURES -->
+<!-- INTRO WITH IMAGE -->
 <section>
   <div class="container">
-    <h2 class="section-title">Why Choose <span>Us</span></h2>
-    <div class="feature-grid">
-      <div class="feature-card">
-        <div class="feature-icon">&#128205;</div>
+    <div class="br-intro">
+      <div>
+        <h2 class="section-title" style="text-align:left;">Boiler <span>Broken Down?</span></h2>
+        <p>Our engineers diagnose faults, provide a clear quote, and carry out repairs using genuine manufacturer parts. We keep parts in stock for all major boiler brands so most repairs are completed same-day.</p>
+        <p>If a specialised component needs ordering, we will return the next day to complete the repair. No hidden fees, no surprises. The price we quote is the price you pay.</p>
+        <a href="tel:07999943640" class="btn-primary" style="display:inline-block; margin-top:16px;">Call Us Now</a>
+      </div>
+      <img loading="lazy" src="images/boiler-repair-work.jpg" alt="Engineer repairing a boiler">
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="alt">
+  <div class="container">
+    <h2 class="section-title">Why Choose <span>Tiger Gas</span></h2>
+    <div class="br-features">
+      <div class="br-feat">
+        <div class="icon">&#128205;</div>
         <h3>Local Engineer</h3>
         <p>Based in the North East with fast response times.</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">&#128295;</div>
+      <div class="br-feat">
+        <div class="icon">&#128295;</div>
         <h3>Genuine Parts</h3>
-        <p>We only use genuine manufacturer parts for all repairs.</p>
+        <p>Only genuine manufacturer parts used.</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">&#9888;</div>
+      <div class="br-feat">
+        <div class="icon">&#9888;</div>
         <h3>24/7 Emergency</h3>
-        <p>Emergency call-outs available around the clock, every day.</p>
+        <p>Call-outs available around the clock.</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">&#9889;</div>
+      <div class="br-feat">
+        <div class="icon">&#9889;</div>
         <h3>Fast Response</h3>
-        <p>We aim to be with you within 2 hours of your call.</p>
+        <p>We aim to be with you within 2 hours.</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">&#128176;</div>
-        <h3>Transparency</h3>
-        <p>No hidden fees. The price we quote is the price you pay.</p>
+      <div class="br-feat">
+        <div class="icon">&#128176;</div>
+        <h3>Transparent Pricing</h3>
+        <p>No hidden fees. Quote is final.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- COMMON ISSUES -->
-<section class="alt">
+<section>
   <div class="container">
     <h2 class="section-title">Common Boiler <span>Issues</span></h2>
     <p class="section-subtitle">Our engineers are experienced in diagnosing and repairing all common boiler faults.</p>
-    <div class="issues-grid">
-      <div class="issue-card">
-        <div class="issue-icon">&#127777;</div>
-        <h3>Broken Thermostat</h3>
+    <div class="br-issues">
+      <div class="br-issue">
+        <h4>&#127777; Broken Thermostat</h4>
+        <p>Thermostat not responding or reading incorrect temperatures, causing heating to stay on or off.</p>
       </div>
-      <div class="issue-card">
-        <div class="issue-icon">&#128167;</div>
-        <h3>Faulty Pipework</h3>
+      <div class="br-issue">
+        <h4>&#128167; Leaking Pipes</h4>
+        <p>Water leaks from pipework, joints or the boiler itself. Can cause water damage if left untreated.</p>
       </div>
-      <div class="issue-card">
-        <div class="issue-icon">&#128293;</div>
-        <h3>Kettling</h3>
+      <div class="br-issue">
+        <h4>&#128293; Kettling Noises</h4>
+        <p>Rumbling or banging sounds caused by limescale build-up or sludge restricting water flow.</p>
       </div>
-      <div class="issue-card">
-        <div class="issue-icon">&#128167;</div>
-        <h3>No Hot Water</h3>
+      <div class="br-issue">
+        <h4>&#128167; No Hot Water</h4>
+        <p>Boiler running but no hot water. Could be a diverter valve, thermostat or pump issue.</p>
       </div>
-      <div class="issue-card">
-        <div class="issue-icon">&#128295;</div>
-        <h3>Faulty Pumps/Valves</h3>
+      <div class="br-issue">
+        <h4>&#128295; Faulty Pump or Valve</h4>
+        <p>Central heating pump not circulating water or valves stuck, causing cold radiators.</p>
       </div>
-      <div class="issue-card">
-        <div class="issue-icon">&#9889;</div>
-        <h3>Ignition Problems</h3>
+      <div class="br-issue">
+        <h4>&#9889; Ignition Failure</h4>
+        <p>Boiler failing to ignite. Could be a faulty electrode, gas valve or PCB issue.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- PRICING -->
-<section>
+<section class="alt">
   <div class="container">
     <h2 class="section-title">Call-Out <span>Prices</span></h2>
-    <p class="section-subtitle">Competitive call-out rates with no hidden charges. We aim to respond within 2 hours.</p>
-    <table class="pricing-table">
-      <thead>
-        <tr>
-          <th>Time</th>
-          <th>Call-Out Fee</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>08:00 to 17:00</td>
-          <td class="price">&pound;60</td>
-        </tr>
-        <tr>
-          <td>17:00 to 00:00</td>
-          <td class="price">&pound;70</td>
-        </tr>
-        <tr>
-          <td>00:00 to 08:00</td>
-          <td class="price">&pound;100</td>
-        </tr>
-      </tbody>
-    </table>
+    <p class="section-subtitle">Competitive call-out rates with no hidden charges.</p>
+    <div class="br-pricing">
+      <div class="br-price-card">
+        <h3>Daytime</h3>
+        <div class="time">08:00 to 17:00</div>
+        <div class="price">&pound;60</div>
+        <a href="tel:07999943640" class="btn-primary">Call Now</a>
+      </div>
+      <div class="br-price-card">
+        <h3>Evening</h3>
+        <div class="time">17:00 to 00:00</div>
+        <div class="price">&pound;70</div>
+        <a href="tel:07999943640" class="btn-primary">Call Now</a>
+      </div>
+      <div class="br-price-card">
+        <h3>Overnight</h3>
+        <div class="time">00:00 to 08:00</div>
+        <div class="price">&pound;100</div>
+        <a href="tel:07999943640" class="btn-primary">Call Now</a>
+      </div>
+    </div>
   </div>
 </section>
 

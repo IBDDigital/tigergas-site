@@ -11,6 +11,51 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .bs-hero {
+      background: url('images/boiler-service-hero.jpeg') center/cover no-repeat;
+      position: relative;
+      padding: 100px 0;
+      text-align: center;
+      color: #fff;
+    }
+    .bs-hero::before { content:''; position:absolute; inset:0; background:rgba(0,0,0,.55); }
+    .bs-hero .container { position:relative; z-index:1; }
+    .bs-hero h1 { font-family:'Playfair Display',serif; font-size:2.5rem; font-weight:800; margin-bottom:16px; }
+    .bs-hero h1 span { color:var(--orange); }
+    .bs-hero p { font-size:1.15rem; color:rgba(255,255,255,.85); max-width:600px; margin:0 auto; line-height:1.7; }
+
+    .bs-intro { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; }
+    .bs-intro img { width:100%; border-radius:6px; box-shadow:0 4px 16px rgba(0,0,0,.12); }
+    .bs-intro p { color:#666; line-height:1.8; margin-bottom:16px; }
+    .bs-intro ul { list-style:none; padding:0; }
+    .bs-intro ul li { padding:8px 0; font-size:1rem; color:#555; border-bottom:1px solid #eee; }
+    .bs-intro ul li::before { content:'\2713'; color:var(--orange); font-weight:700; margin-right:10px; }
+
+    .bs-pricing { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+    .bs-price-card {
+      background:#fff; border-radius:6px; box-shadow:0 2px 12px rgba(0,0,0,.08);
+      text-align:center; padding:36px 24px; border-top:4px solid var(--orange); transition:transform .2s;
+    }
+    .bs-price-card:hover { transform:translateY(-4px); }
+    .bs-price-card h3 { font-family:'Playfair Display',serif; font-size:1.1rem; color:var(--dark); margin-bottom:12px; }
+    .bs-price-card .price { font-size:2rem; font-weight:700; color:var(--orange); margin-bottom:16px; }
+    .bs-price-card p { font-size:.9rem; color:#666; line-height:1.6; }
+    .bs-price-card .btn-primary { margin-top:20px; padding:10px 24px; font-size:.85rem; }
+
+    .bs-checklist { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; }
+    .bs-checklist img { width:100%; border-radius:6px; box-shadow:0 4px 16px rgba(0,0,0,.12); }
+    .bs-checklist ul { list-style:none; padding:0; }
+    .bs-checklist ul li { padding:10px 0; font-size:1rem; color:#555; border-bottom:1px solid #eee; }
+    .bs-checklist ul li::before { content:'\2022'; color:var(--orange); font-weight:700; margin-right:10px; }
+
+    @media (max-width:768px) {
+      .bs-intro, .bs-checklist { grid-template-columns:1fr; }
+      .bs-pricing { grid-template-columns:1fr; }
+      .bs-hero h1 { font-size:1.75rem; }
+      .bs-hero { padding:60px 0; }
+    }
+  </style>
 </head>
 <body>
 
@@ -30,15 +75,15 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li class="has-dropdown"><a href="services.html">Services</a>
-            <div class="dropdown">
-              <a href="new-boiler-packages.html">New Boiler Packages</a>
-              <a href="boiler-service.html">Boiler Service</a>
-              <a href="boiler-repair.html">Boiler Repair</a>
-              <a href="gas-safety-checks.html">Gas Safety Checks</a>
-              <a href="cookers-and-hobs.html">Cookers &amp; Hobs</a>
-              <a href="air-source-heat-pumps.html">Air Source Heat Pumps</a>
-            </div>
-          </li>
+        <div class="dropdown">
+          <a href="new-boiler-packages.html">New Boiler Packages</a>
+          <a href="boiler-service.html">Boiler Service</a>
+          <a href="boiler-repair.html">Boiler Repair</a>
+          <a href="gas-safety-checks.html">Gas Safety Checks</a>
+          <a href="cookers-and-hobs.html">Cookers &amp; Hobs</a>
+          <a href="air-source-heat-pumps.html">Air Source Heat Pumps</a>
+        </div>
+      </li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </div>
@@ -46,95 +91,84 @@
 
 <main>
 
-<!-- PAGE HERO -->
-<section class="page-hero">
+<!-- HERO -->
+<section class="bs-hero">
   <div class="container">
     <h1>Boiler <span>Servicing</span></h1>
     <p>Keep your boiler running safely and efficiently with a professional annual service from Tiger Gas.</p>
   </div>
 </section>
 
-<!-- BENEFITS -->
+<!-- INTRO WITH IMAGE -->
 <section>
   <div class="container">
-    <h2 class="section-title">Benefits of a <span>Boiler Service</span></h2>
-    <div class="benefits-list">
-      <div class="benefit-item">
-        <div class="benefit-icon">&#9989;</div>
-        <span>Manufacturer Recommended</span>
-      </div>
-      <div class="benefit-item">
-        <div class="benefit-icon">&#128736;</div>
-        <span>Reduce Breakdown Risk</span>
-      </div>
-      <div class="benefit-item">
-        <div class="benefit-icon">&#128176;</div>
-        <span>Lower Energy Bills</span>
-      </div>
-      <div class="benefit-item">
-        <div class="benefit-icon">&#9889;</div>
-        <span>Greater Performance</span>
-      </div>
-      <div class="benefit-item">
-        <div class="benefit-icon">&#128269;</div>
-        <span>Any Faults Reported</span>
-      </div>
-      <div class="benefit-item">
-        <div class="benefit-icon">&#128203;</div>
-        <span>Warranty Stays Valid</span>
-      </div>
-      <div class="benefit-item">
-        <div class="benefit-icon">&#128197;</div>
-        <span>Annual Service Reminder</span>
+    <div class="bs-intro">
+      <img loading="lazy" src="images/boiler-service-engineer.png" alt="Engineer servicing a boiler">
+      <div>
+        <h2 class="section-title" style="text-align:left;">Why Service Your <span>Boiler?</span></h2>
+        <p>Annual servicing is the minimum requirement to preserve your boiler warranty. A well-maintained boiler runs more efficiently, lasts longer, and keeps your home safe.</p>
+        <p>We recommend servicing in Autumn or Spring so your boiler is ready for the colder months. A typical service takes up to one hour.</p>
+        <ul>
+          <li>Maintains manufacturer warranty</li>
+          <li>Reduces breakdown risk</li>
+          <li>Lowers energy bills</li>
+          <li>Keeps your boiler at peak performance</li>
+          <li>Identifies faults early</li>
+          <li>Annual service reminder (if opted in)</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PRICING -->
+<!-- PRICING CARDS -->
 <section class="alt">
   <div class="container">
     <h2 class="section-title">Servicing <span>Prices</span></h2>
-    <table class="pricing-table">
-      <thead>
-        <tr>
-          <th>Service</th>
-          <th>Price</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>One Off Boiler Service</td>
-          <td class="price">&pound;70</td>
-        </tr>
-        <tr>
-          <td>One Off Boiler Service</td>
-          <td class="price">&pound;75</td>
-        </tr>
-        <tr>
-          <td>Full System Service</td>
-          <td class="price">From &pound;250</td>
-        </tr>
-      </tbody>
-    </table>
+    <p class="section-subtitle">Competitive pricing for all boiler servicing needs.</p>
+    <div class="bs-pricing">
+      <div class="bs-price-card">
+        <h3>Annual Boiler Service</h3>
+        <div class="price">&pound;70</div>
+        <p>For existing customers on our annual service plan.</p>
+        <a href="contact.html" class="btn-primary">Book Now</a>
+      </div>
+      <div class="bs-price-card">
+        <h3>One Off Boiler Service</h3>
+        <div class="price">&pound;75</div>
+        <p>Single boiler service without an ongoing plan.</p>
+        <a href="contact.html" class="btn-primary">Book Now</a>
+      </div>
+      <div class="bs-price-card">
+        <h3>Full System Service &amp; Flush</h3>
+        <div class="price">From &pound;250</div>
+        <p>Complete system service including a powerflush to clear sludge and debris.</p>
+        <a href="contact.html" class="btn-primary">Book Now</a>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- CHECKLIST -->
+<!-- CHECKLIST WITH IMAGE -->
 <section>
   <div class="container">
-    <h2 class="section-title">What Our Engineers <span>Check</span></h2>
-    <p class="section-subtitle">During a boiler service, our engineers carry out a comprehensive inspection covering:</p>
-    <ul class="checklist">
-      <li>Gas pressure</li>
-      <li>Flue condition and integrity</li>
-      <li>Electrical connections</li>
-      <li>Fan operation</li>
-      <li>Seals and gaskets</li>
-      <li>Safety devices</li>
-      <li>Condensate trap and pipe</li>
-      <li>Pipework and connections</li>
-    </ul>
+    <div class="bs-checklist">
+      <div>
+        <h2 class="section-title" style="text-align:left;">What Our Engineers <span>Check</span></h2>
+        <p style="color:#666; margin-bottom:20px;">During a boiler service, our engineers carry out a comprehensive inspection covering:</p>
+        <ul>
+          <li>Gas pressure and flow rate</li>
+          <li>Flue combustion analysis</li>
+          <li>Electrical connections and wiring</li>
+          <li>Fan operation and speed</li>
+          <li>Seals, gaskets and o-rings</li>
+          <li>Electrodes and ignition</li>
+          <li>Safety devices and controls</li>
+          <li>Condensate trap and pipe</li>
+        </ul>
+      </div>
+      <img loading="lazy" src="images/boiler-service-checklist.jpg" alt="Boiler service checklist">
+    </div>
   </div>
 </section>
 
@@ -159,6 +193,24 @@
         <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">How long does a boiler last?</button>
         <div class="faq-answer">
           <p>A well-maintained boiler can last between 10 to 15 years. Regular servicing helps extend its lifespan and keeps it running efficiently.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">Will a service reduce my energy bills?</button>
+        <div class="faq-answer">
+          <p>Yes. A well-serviced boiler runs more efficiently, which means it uses less gas to heat your home. You could save hundreds of pounds per year on energy bills.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">Do I need a service to keep my warranty?</button>
+        <div class="faq-answer">
+          <p>Yes. Most boiler manufacturers require an annual service by a Gas Safe registered engineer to maintain your warranty. Missing a service could void your cover.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">What happens if you find a fault?</button>
+        <div class="faq-answer">
+          <p>If we find a fault during your service, we will report it to you immediately and advise you on the best course of action. We will provide a quote for any repairs needed.</p>
         </div>
       </div>
     </div>
