@@ -221,7 +221,10 @@
   var images = [];
   var currentIndex = 0;
 
-  fetch('gallery.json?v=' + Date.now())
+  // SETUP: Replace this URL with your Cloudflare Worker URL
+  var GALLERY_API = 'https://gallery-api.tigergas.co.uk/';
+
+  fetch(GALLERY_API)
     .then(function(r){ return r.json(); })
     .then(function(data){
       images = data;
